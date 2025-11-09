@@ -69,9 +69,8 @@
         transform: translateY(-2px) scale(1.03); 
         box-shadow: 0 10px 25px var(--shadow-color);
     }
-
+    /* כללי */
     .micro{font-size:13px;color:var(--danger);margin-top:8px} 
-    /* סקשנים */
     .sec{border-radius:20px;padding:30px;margin:25px 0;box-shadow:0 6px 15px rgba(0,0,0,0.05)} 
     .sec:nth-child(even){background:var(--alt-bg);border-color:rgba(30,149,223,0.2);} 
     .sec:nth-child(odd){background:var(--card-bg);}
@@ -88,7 +87,7 @@
     }
     .star-rating{font-size:20px;color:gold;margin-bottom:10px}
     
-    /* כפתורי הטעימה - תיקון קריטי */
+    /* כפתורי הטעימה */
     .btn-row{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-top:20px;} 
     .btn, .btn.alt{ 
         display: inline-block; 
@@ -100,16 +99,10 @@
         text-align: center;
         box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
-    .btn{
-        background:var(--c3); 
-        color:#fff;
-    }
-    .btn.alt{
-        background:var(--card-bg); 
-        color:var(--c2); 
-        border:1px solid var(--c2); 
-    }
-    /* מחיר בולט - עדכון קריטי לבקשת המשתמש */
+    .btn{background:var(--c3);color:#fff;}
+    .btn.alt{background:var(--card-bg);color:var(--c2);border:1px solid var(--c2);}
+    
+    /* מחיר בולט - עדכון קריטי */
     .price-block{text-align: center; background:var(--alt-bg); border-radius:20px; padding: 40px;}
     .price-block h2{ 
         font-size: 32px; 
@@ -126,7 +119,7 @@
         margin: 0 auto 30px;
     }
     .price-block .price {
-        display: block; /* לשינוי אנכי */
+        display: block; 
         padding-top: 20px;
     }
     .price-block .price .strikethrough-price{
@@ -151,14 +144,12 @@
         margin-top: 15px;
         display: block; 
     }
-    /* FAQ */
-    .faq details{border:1px solid #eceff1;border-radius:16px;margin:10px 0;padding:12px;background:var(--card-bg);box-shadow: 0 2px 4px rgba(0,0,0,0.05)}
-    .faq summary{font-weight:700;cursor:pointer;color:var(--c1);padding-right:10px; outline: none; list-style: none;} 
-    .faq summary::-webkit-details-marker {display: none;} 
-    .faq summary:before {content: '▶'; margin-inline-end: 10px; color: var(--c2);} 
-    .faq details[open] summary:before {content: '▼';} 
-    .faq details div{padding-top:10px;padding-right:10px;color:#444}
-    
+    .price-block .value-line {
+        font-size: 16px;
+        font-weight: 500;
+        color: var(--c3);
+        margin-top: 30px;
+    }
     /* כללי */
     .bullets{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:15px}
     .bullets li{list-style:none;font-weight:500;color:var(--text);padding: 10px;}
@@ -187,8 +178,8 @@
     <section class="hero">
       <div>
         <h1>הקץ לטקסטים רובוטיים: 101 הפרומפטים שמוסיפים נשמה ל-AI שלך (ובאמת מוכרים בעברית)</h1>
-        <p><strong>אם ה-AI כותב לך טקסטים קרים שפשוט לא ממירים, את/ה לא לבד/ה.</strong> בניתי את PromptBook – המדריך היחיד שמחבר כתיבה רגשית עם טכנולוגיה חכמה. כל פרומפט הוא נוסחה בדוקה, מסודרת לפי קטגוריות, שמוכנה ל"העתק-הדבק" כדי ליצור תוכן שמדבר ישר ללב הלקוחות הישראלים.</p>
-        <a id="payTop" class="cta" href="https://links.payboxapp.com/1G1C8QGt9Xb" target="_blank" rel="noopener">קבל גישה מיידית לחוברת</a>
+        <p><strong>אם ה-AI כותב לך טקסטים קרים שפשוט לא ממירים, את/ה לא לבד/ה.</strong> בניתי את PromptBook – **הכלי האינטראקטיבי** היחיד שמחבר כתיבה רגשית עם טכנולוגיה חכמה. כל פרומפט הוא נוסחה בדוקה, מסודרת לפי קטגוריות, שמוכנה ל"העתק-הדבק" כדי ליצור תוכן שמדבר ישר ללב הלקוחות הישראלים.</p>
+        <a id="payTop" class="cta" href="https://links.payboxapp.com/1G1C8QGt9Xb" target="_blank" rel="noopener">קבל גישה לכלי האינטראקטיבי</a>
         <div class="micro">גישה מיד אחרי תשלום</div>
       </div>
     </section>
@@ -196,7 +187,7 @@
     <section class="sec">
       <h2>מה בפנים</h2>
       <ul class="bullets">
-        <li>101 פרומפטים ב־10 קטגוריות</li>
+        <li>101 פרומפטים בתוך **אפליקציה אינטראקטיבית** ב־10 קטגוריות</li>
         <li>חיפוש + סינון לפי קהל יעד</li>
         <li>כפתור "העתק" + מועדפים</li>
         <li>ייצוא PDF בעברית</li>
@@ -205,7 +196,7 @@
     </section>
 
     <section class="sec">
-      <h2>טעימה מהחוברת</h2>
+      <h2>טעימה מהכלי</h2>
       <div class="teaser">
         <div class="card"><b>כותרת ממירה לדף נחיתה</b><br>יצירת 10 וריאציות עם הבטחת תוצאה וטון רגשי.</div>
         <div class="card"><b>פתיח אמפתי קצר</b><br>נוסחה של 70 מילים לזיהוי כאב, תקווה ופתרון לקהל שלך.</div>
@@ -235,17 +226,17 @@
         <div class="card">
             <div class="star-rating">★★★★★</div>
             "שדרגתי את כל מערכת האימיילים שלי תוך ימים."
-            <span>- יוסי אברהם, משווק דיגיטלי</span>
+            <span>- יעל כץ, מנהלת סושיאל</span>
         </div>
         <div class="card">
             <div class="star-rating">★★★★★</div>
             "זה כמו לשבת עם מומחה שיווק אישי, רק בלי המחיר של מומחה."
-            <span>- דנה לוי, יועצת עסקית</span>
+            <span>- רן לוי, מאמן אישי</span>
         </div>
         <div class="card">
             <div class="star-rating">★★★★★</div>
             "זה לא עוד מדריך תיאורטי, כל פרומפט פשוט עובד!"
-            <span>- שי כהן, בעל עסק</span>
+            <span>- מירב דהן, פרילנסרית</span>
         </div>
       </div>
     </section>
@@ -257,7 +248,7 @@
       </h2>
       
       <p>
-        לכבוד חודש היומולדת שלי (אני חוגגת 50!), אתם מקבלים גישה מיידית למדריך המלא במחיר מיוחד:
+        לכבוד חודש היומולדת שלי (אני חוגגת 50!), אתם מקבלים גישה מיידית לכלי האינטראקטיבי במחיר מיוחד:
       </p>
 
       <div class="price"> 
@@ -272,9 +263,13 @@
         </div>
       </div>
       
+      <p class="value-line">
+        זהו כלי שמחירו האמיתי הוא ערך מצטבר של אלפי שקלים בזמן עבודה שנחסך
+      </p>
+      
       <div class="btn-row" style="justify-content: center; margin-top: 40px;">
         <a id="payBottom" class="cta" href="https://links.payboxapp.com/1G1C8QGt9Xb" target="_blank" rel="noopener" style="padding: 20px 40px;">
-          כן, אני רוצה את החוברת עכשיו!
+          כן, אני רוצה את הכלי עכשיו!
         </a>
       </div>
       
