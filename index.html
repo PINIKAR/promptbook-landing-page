@@ -50,7 +50,7 @@
     /* HERO - ממורכז, נקי ובולט */
     .hero{
         display:grid;grid-template-columns:1fr; 
-        gap:30px;align-items:center;padding:40px 0 30px; /* צמצום רווח תחתון */
+        gap:30px;align-items:center;padding:40px 0 30px; 
         text-align: center; 
         background: var(--card-bg);
     }
@@ -103,7 +103,7 @@
     .btn{background:var(--c3);color:#fff;}
     .btn.alt{background:var(--card-bg);color:var(--c2);border:1px solid var(--c2);}
     
-    /* מחיר בולט - עדכון קריטי */
+    /* מחיר בולט */
     .price-block{text-align: center; background:var(--alt-bg); border-radius:20px; padding: 40px;}
     .price-block h2{ 
         font-size: 32px; 
@@ -113,38 +113,21 @@
         padding-bottom: 0; 
         margin-bottom: 25px;
     }
-    .price-block p {
-        font-size: 18px; 
-        color: var(--text); 
-        max-width: 600px; 
-        margin: 0 auto 30px;
-    }
-    .price-block .price {
-        display: block; 
-        padding-top: 20px;
-    }
-    .price-block .price .strikethrough-price{
-        font-size: 30px; 
-        text-decoration: line-through; 
-        color: var(--danger); 
-        opacity: 0.7; 
-        margin-bottom: -15px;
-        display: block; 
-    }
-    .price-block .price .num{
-        font-size: 100px; 
-        font-weight: 900; 
-        color: var(--c2); 
-        line-height: 1;
-        display: block;
-    } 
-    .price-block .price .savings{
-        font-size: 26px; 
-        font-weight: 700; 
-        color: var(--danger); 
-        margin-top: 15px;
-        display: block; 
-    }
+    .price-block p {font-size: 18px; color: var(--text); max-width: 600px; margin: 0 auto 30px;}
+    .price-block .price {display: block; padding-top: 20px;}
+    .price-block .price .strikethrough-price{font-size: 30px; text-decoration: line-through; color: var(--danger); opacity: 0.7; margin-bottom: -15px; display: block;}
+    .price-block .price .num{font-size: 100px; font-weight: 900; color: var(--c2); line-height: 1;display: block;} 
+    .price-block .price .savings{font-size: 26px; font-weight: 700; color: var(--danger); margin-top: 15px;display: block;}
+    .price-block .value-line {font-size: 16px;font-weight: 500;color: var(--c3);margin-top: 30px;}
+    
+    /* FAQ - תיקון פונקציונליות סופי */
+    .faq details{border:1px solid #eceff1;border-radius:16px;margin:10px 0;padding:12px;background:var(--card-bg);box-shadow: 0 2px 4px rgba(0,0,0,0.05)}
+    .faq summary{font-weight:700;cursor:pointer;color:var(--c1);padding-right:10px; outline: none; list-style: none;} 
+    .faq summary::-webkit-details-marker {display: none;} /* הסתרת ה-marker המובנה */
+    .faq summary:before {content: '▶'; margin-inline-end: 10px; color: var(--c2); display: inline-block; transition: transform 0.2s;} /* חץ סגור */
+    .faq details[open] summary:before {content: '▼'; transform: rotate(90deg);} /* חץ פתוח */
+    .faq details div{padding-top:10px;padding-right:10px;color:#444}
+    
     /* כללי */
     .bullets{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:15px}
     .bullets li{list-style:none;font-weight:700;color:var(--text);padding: 10px; background: #fff; border:2px solid #e0e0e0; border-radius:12px;}
@@ -195,7 +178,7 @@
         <div class="card"><b>כותרת ממירה לדף נחיתה</b><br>יצירת 10 וריאציות עם הבטחת תוצאה וטון רגשי.</div>
         <div class="card"><b>פתיח אמפתי קצר</b><br>נוסחה של 70 מילים לזיהוי כאב, תקווה ופתרון לקהל שלך.</div>
         <div class="card"><b>קמפיין 7 ימים להשקה רכה</b><br>בניית רצף 7 ימי טיזר, עדות ודחיפות להשקות מוצרים.</div>
-        <div class="card"><b>Retargeting השארת עגלה</b><br>3 מודעות רימרקטינג אפקטיביות למבקרים שלא המירו (רגשי, חברתי, רציונלי).</div>
+        <div classם="card"><b>Retargeting השארת עגלה</b><br>3 מודעות רימרקטינג אפקטיביות למבקרים שלא המירו (רגשי, חברתי, רציונלי).</div>
         <div class="card"><b>פירוק התנגדות עיקרית</b><br>מענה בשלושה חלקים להתנגדות הגדולה ביותר למוצר שלך (אמפתיה→הוכחה).</div>
         <div class="card"><b>FAQ ממיר</b><br>6 שאלות ותשובות שמסירות התנגדויות ומכניסות CTA עדין.</div>
       </div>
