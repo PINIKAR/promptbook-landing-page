@@ -71,7 +71,7 @@
     }
 
     .micro{font-size:13px;color:var(--danger);margin-top:8px} 
-    /* סקשנים */
+    /* סקשנים - מעבר לרקע מתחלף נקי */
     .sec{border-radius:20px;padding:30px;margin:25px 0;box-shadow:0 6px 15px rgba(0,0,0,0.05)} 
     .sec:nth-child(even){background:var(--alt-bg);border-color:rgba(30,149,223,0.2);} 
     .sec:nth-child(odd){background:var(--card-bg);}
@@ -87,8 +87,31 @@
         font-style: italic; 
     }
     .star-rating{font-size:20px;color:gold;margin-bottom:10px}
+    #testimonials .card span{display:block;font-weight:600;margin-top:10px;color:var(--c3)}
+
+    /* תועלות / בולטים - תיקון קריטי לניגודיות ועיצוב */
+    .bullets{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:15px}
+    .bullets li{
+        background:var(--bg);border:2px solid #e0e0e0;border-radius:12px;padding:12px;list-style:none;font-weight:500;color:var(--text);
+        transition: border-color 0.2s; 
+        background: #fff; /* ודא רקע לבן בתוך הקוביות */
+    }
+    .bullets li:hover{
+        border-color: var(--c1); 
+    }
+    .bullets li:before{content:"✨";margin-inline-end:8px;} 
     
-    /* כפתורי הטעימה */
+    /* טעימה / כרטיסיות */
+    .teaser{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:15px}
+    .card{
+        background:#f8faff;border:1px solid var(--c2);border-radius:16px;padding:15px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.08); 
+        transition: box-shadow 0.3s;
+        color: var(--text); /* ודא שהטקסט שחור */
+    }
+    .card b{color:var(--c3)}
+
+    /* כפתורי הטעימה - תיקון סופי */
     .btn-row{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-top:20px;} 
     .btn, .btn.alt{ 
         display: inline-block; 
@@ -102,8 +125,8 @@
     }
     .btn{background:var(--c3);color:#fff;}
     .btn.alt{background:var(--card-bg);color:var(--c2);border:1px solid var(--c2);}
-    
-    /* מחיר בולט - עדכון קריטי */
+
+    /* מחיר בולט */
     .price-block{text-align: center; background:var(--alt-bg); border-radius:20px; padding: 40px;}
     .price-block h2{ 
         font-size: 32px; 
@@ -113,44 +136,21 @@
         padding-bottom: 0; 
         margin-bottom: 25px;
     }
-    .price-block p {
-        font-size: 18px; 
-        color: var(--text); 
-        max-width: 600px; 
-        margin: 0 auto 30px;
-    }
-    .price-block .price {
-        display: block; 
-        padding-top: 20px;
-    }
-    .price-block .price .strikethrough-price{
-        font-size: 30px; 
-        text-decoration: line-through; 
-        color: var(--danger); 
-        opacity: 0.7; 
-        margin-bottom: -15px;
-        display: block; 
-    }
-    .price-block .price .num{
-        font-size: 100px; 
-        font-weight: 900; 
-        color: var(--c2); 
-        line-height: 1;
-        display: block;
-    } 
-    .price-block .price .savings{
-        font-size: 26px; 
-        font-weight: 700; 
-        color: var(--danger); 
-        margin-top: 15px;
-        display: block; 
-    }
-    .price-block .value-line {
-        font-size: 16px;
-        font-weight: 500;
-        color: var(--c3);
-        margin-top: 30px;
-    }
+    .price-block p {font-size: 18px; color: var(--text); max-width: 600px; margin: 0 auto 30px;}
+    .price-block .price {display: block; padding-top: 20px;}
+    .price-block .price .strikethrough-price{font-size: 30px; text-decoration: line-through; color: var(--danger); opacity: 0.7; margin-bottom: -15px; display: block;}
+    .price-block .price .num{font-size: 100px; font-weight: 900; color: var(--c2); line-height: 1;display: block;} 
+    .price-block .price .savings{font-size: 26px; font-weight: 700; color: var(--danger); margin-top: 15px;display: block;}
+    .price-block .value-line {font-size: 16px;font-weight: 500;color: var(--c3);margin-top: 30px;}
+    
+    /* FAQ - תיקון פונקציונליות קריטי */
+    .faq details{border:1px solid #eceff1;border-radius:16px;margin:10px 0;padding:12px;background:var(--card-bg);box-shadow: 0 2px 4px rgba(0,0,0,0.05)}
+    .faq summary{font-weight:700;cursor:pointer;color:var(--c1);padding-right:10px; outline: none; list-style: none;} 
+    .faq summary::-webkit-details-marker {display: none;} /* מסתיר את החץ המובנה */
+    .faq summary:before {content: '▶'; margin-inline-end: 10px; color: var(--c2); display: inline-block; transition: transform 0.2s;} /* חץ סגור */
+    .faq details[open] summary:before {content: '▼'; transform: rotate(90deg);} /* חץ פתוח */
+    .faq details div{padding-top:10px;padding-right:10px;color:#444}
+    
     /* כללי */
     .bullets{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:15px}
     .bullets li{list-style:none;font-weight:500;color:var(--text);padding: 10px;}
@@ -226,7 +226,7 @@
       <div class="teaser">
         <div class="card">
             <div class="star-rating">★★★★★</div>
-            "הכלי הזה חסך לי לפחות 5 שעות כתיבה שבועיות. במקום לשבור את הראש, אני פשוט מעתיק ומדביק."
+            "הכלי הזה חסך לי לפחות 5 שעות כתיבה שבועיות. במקום לשבור את הראש, אני פשוט מעתיקה ומדביקה."
             <span>- יעל כץ, מנהלת סושיאל</span>
         </div>
         <div class="card">
