@@ -2,7 +2,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>PromptBook – 101 פרומפטים בעברית</title>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Hebrew:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Hebrew:wght@400;600;700;800&display=swap" rel="stylesheet">
   <style>
     /* צבעי מותג */
     :root{
@@ -15,6 +15,7 @@
       --text:#111;
       --bg:#fcfcff; /* רקע בהיר מאוד */
       --card-bg:#ffffff;
+      --alt-bg:#f5faff; /* רקע מתחלף עדין */
     }
     html,body{font-family:var(--font);margin:0;background:var(--bg);color:var(--text)}
     .wrap{max-width:1050px;margin:0 auto;padding:20px}
@@ -23,32 +24,35 @@
     header img{height:50px}
     /* פס הטיימר - בולט ודביק */
     .bar{
-      position:sticky;top:0;z-index:10;background:var(--c4);color:white;
-      display:flex;gap:10px;align-items:center;justify-content:center;padding:8px 12px;
-      font-size:15px;
+      position:sticky;top:0;z-index:10;background:var(--danger);color:white;
+      display:flex;gap:10px;align-items:center;justify-content:center;padding:12px 12px;
+      font-size:16px;
+      font-weight:700;
     }
-    .bar .time{font-weight:700;color:yellow}
+    .bar .time{font-weight:900;color:yellow}
     .bar .badge{background:rgba(255,255,255,0.2);border:1px solid rgba(255,255,255,0.5);border-radius:999px;padding:4px 10px}
     /* HERO - פתיח */
     .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:30px;align-items:center;padding:24px 0}
-    .hero h1{margin:0 0 10px;font-size:38px;line-height:1.2;color:var(--c1)}
+    .hero h1{margin:0 0 10px;font-size:40px;line-height:1.2;color:var(--c1);font-weight:800} /* כותרת יותר בולטת */
     .hero p{margin:0 0 20px;color:#444}
     /* CTA */
-    .cta{display:inline-block;background:var(--c1);color:white;padding:14px 24px;border-radius:30px;text-decoration:none;font-weight:700;box-shadow:0 4px 10px rgba(0,0,0,0.2)}
+    .cta{display:inline-block;background:var(--c1);color:white;padding:16px 30px;border-radius:30px;text-decoration:none;font-weight:700;box-shadow:0 6px 15px rgba(147,62,199,0.4);} /* צל ובולטות חזקה */
     .micro{font-size:13px;color:#666;margin-top:8px}
-    /* כל הסקשנים - לבן עם גבול עדין */
+    /* כל הסקשנים - לבן עם גבול עדין + רקע מתחלף */
     .sec{background:var(--card-bg);border:1px solid var(--c4);border-radius:16px;padding:25px;margin:20px 0;box-shadow:0 3px 8px rgba(0,0,0,0.05)}
-    .sec h2{margin:0 0 15px;font-size:24px;color:var(--c3);border-bottom:1px solid #eee;padding-bottom:10px}
+    .sec:nth-child(even){background:var(--alt-bg);border-color:var(--c2);} /* רקע מתחלף */
+    .sec h2{margin:0 0 15px;font-size:26px;color:var(--c3);border-bottom:1px solid #eee;padding-bottom:10px;font-weight:700}
     /* תועלות / בולטים */
     .bullets{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:15px}
     .bullets li{background:var(--bg);border:1px solid #e0e0e0;border-radius:10px;padding:12px;list-style:none;font-weight:500;color:var(--text)}
+    .bullets li:before{content:"✓";margin-inline-end:8px;color:var(--c1);font-weight:700} /* וי קטן */
     /* טעימה / כרטיסיות */
     .teaser{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:15px}
     .card{background:#f8faff;border:1px solid var(--c2);border-radius:12px;padding:15px}
     .card b{color:var(--c3)}
     /* מחיר */
     .price{display:flex;gap:15px;align-items:baseline;flex-wrap:wrap}
-    .price .num{font-size:48px;font-weight:800;color:var(--c1)}
+    .price .num{font-size:52px;font-weight:800;color:var(--c1)}
     .price div{font-size:18px;font-weight:600;color:#555}
     .btn-row{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-top:15px}
     .btn{background:var(--c3);color:#fff;padding:12px 18px;border-radius:30px;text-decoration:none;font-weight:600}
@@ -58,7 +62,7 @@
     .faq summary{font-weight:600;cursor:pointer;color:var(--c3)}
     .faq details div{padding-top:10px;color:#444}
     /* עליי */
-    .about{display:flex;gap:20px;align-items:center;background:var(--bg);border-color:var(--c4)}
+    .about{display:flex;gap:20px;align-items:center;background:var(--alt-bg);border-color:var(--c4)}
     .about img{width:100px;height:100px;border:3px solid var(--c1);border-radius:50%;object-fit:cover}
     /* Footer */
     footer{color:#666;font-size:13px;text-align:center;padding:16px 0}
@@ -67,8 +71,8 @@
     @media (max-width:900px){.hero{grid-template-columns:1fr}}
   </style></head><body>
   <div class="bar">
-    <span class="badge">השקת הבכורה</span>
-    <span>מחיר השקה מסתיים בעוד</span>
+    <span class="badge">חגיגות 50 של פנינה!</span>
+    <span>מבצע מיוחד מסתיים בעוד</span>
     <span class="time" id="timer">00:00:00</span>
   </div>
 
@@ -132,7 +136,7 @@
     </section>
 
     <section class="sec">
-      <h2>השקה מיוחדת</h2>
+      <h2>מבצע יום הולדת 50!</h2>
       <div class="price">
         <div class="num">129 ₪</div>
         <div>במקום 179 ₪ • כולל עדכונים עתידיים</div>
@@ -165,8 +169,9 @@
     © PromptBook • 
     <a href="mailto:pninakar@gmail.com">צור קשר</a> • 
     <a href="https://wa.me/972548383451" target="_blank" rel="noopener">ווטסאפ</a> •
-    <a href="/terms.html">תנאי שימוש</a> • 
-    <a href="/privacy.html">מדיניות פרטיות</a>
+    <a href="terms.html">תנאי שימוש</a> • 
+    <a href="privacy.html">מדיניות פרטיות</a> •
+    <a href="accessibility.html">הצהרת נגישות</a>
   </footer>
 
   <script>
@@ -181,7 +186,7 @@
     function pad(n){ return n.toString().padStart(2,'0'); }
     function tick(){
       const now = Date.now();
-      let diff = Math.max(0, deadline - now);
+      let diff = Math.max(F0, deadline - now);
       const s = Math.floor(diff/1000)%60;
       const m = Math.floor(diff/1000/60)%60;
       const h = Math.floor(diff/1000/60/60)%24;
@@ -191,7 +196,7 @@
 
       if(diff===0){
         // סיום ההצעה: משנים רקע ל-אדום ומנטרלים כפתורים
-        document.querySelector('.bar').style.background = 'var(--danger)';
+        document.querySelector('.bar').style.background = 'var(--c3)'; // חוזר לצבע כחול כהה
         $timer.style.color = 'white';
         document.querySelector('.bar span:nth-child(2)').textContent = 'ההצעה הסתיימה';
         buttons.forEach(b=>{
