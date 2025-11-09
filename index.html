@@ -26,7 +26,7 @@
     }
     @keyframes pulseDanger {
         0% { background-color: var(--danger); box-shadow: 0 0 10px rgba(248, 97, 115, 0.9); }
-        50% { background-color: rgba(248, 97, 115, 0.6); box-shadow: none; } /* צבע שקוף יותר */
+        50% { background-color: rgba(248, 97, 115, 0.6); box-shadow: none; } 
         100% { background-color: var(--danger); box-shadow: 0 0 10px rgba(248, 97, 115, 0.9); }
     }
     
@@ -54,7 +54,7 @@
       padding:6px 15px; 
     }
     
-    /* פס המכירה הדרמטי החדש - תיקון קריטי ל-CSS */
+    /* פס המכירה הדרמטי החדש - אנימציה פעילה */
     .promo-bar-static{
         background-color: var(--danger);
         color: white;
@@ -67,10 +67,8 @@
         width: fit-content;
         line-height: 1.4;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-        /* יישום האנימציה */
         animation: pulseDanger 1.5s infinite alternate; 
     }
-
 
     /* HERO - ממורכז, נקי ובולט */
     .hero{
@@ -88,12 +86,12 @@
     /* CTA */
     .cta{
       display:inline-block;background:var(--c1);color:white;padding:18px 36px;border-radius:30px;
-      text-decoration:none;font-weight:800;box-shadow:0 8px 20px var(--shadow-color);
+      text-decoration:none;font-weight:800;box-shadow:0 8px 20px rgba(147,62,199,0.5);
       transition: transform 0.2s, box-shadow 0.2s; 
     }
     .cta:hover{
         transform: translateY(-2px) scale(1.03); 
-        box-shadow: 0 10px 25px var(--shadow-color);
+        box-shadow: 0 10px 25px rgba(147,62,199,0.7);
     }
 
     .micro{display: none;} 
@@ -114,7 +112,7 @@
     }
     .star-rating{font-size:20px;color:gold;margin-bottom:10px}
     
-    /* כפתורי הטעימה */
+    /* כפתורי הטעימה - תיקון קריטי להפרדה */
     .btn-row{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-top:20px;} 
     .btn, .btn.alt{ 
         display: inline-block; 
@@ -128,7 +126,28 @@
     }
     .btn{background:var(--c3);color:#fff;}
     .btn.alt{background:var(--card-bg);color:var(--c2);border:1px solid var(--c2);}
-    
+
+    /* טעימה / כרטיסיות - תיקון הפרדה סופי */
+    .teaser{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:15px; padding: 15px 0;} 
+    .card{
+        /* הסרת ה-box-shadow כדי שהרקע הצבעוני יבלוט יותר */
+        border:2px solid transparent; 
+        border-radius:16px;padding:18px; 
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
+        color: var(--text); 
+        transition: transform 0.3s;
+    }
+    .card:hover{
+        transform: translateY(-2px);
+    }
+    /* גווני הפסטל הממותגים */
+    .card:nth-child(6n+1) { background-color: #E6E0F1; border-color: rgba(147, 62, 199, 0.5); } /* סגול פסטל */
+    .card:nth-child(6n+2) { background-color: #E0F5FF; border-color: rgba(30, 149, 223, 0.5); } /* טורקיז פסטל */
+    .card:nth-child(6n+3) { background-color: #FFE0E5; border-color: rgba(248, 97, 115, 0.5); } /* ורוד פסטל */
+    .card:nth-child(6n+4) { background-color: #F0F4E8; border-color: rgba(153, 172, 114, 0.5); } 
+    .card:nth-child(6n+5) { background-color: #F8F9FF; border-color: rgba(95, 90, 215, 0.5); }
+    .card:nth-child(6n+6) { background-color: #FFF9E0; border-color: rgba(255, 204, 0, 0.5); }
+
     /* מחיר בולט */
     .price-block{text-align: center; background:var(--alt-bg); border-radius:20px; padding: 40px;}
     .price-block h2{ 
@@ -203,12 +222,12 @@
     <section class="sec">
       <h2>טעימה מהכלי</h2>
       <div class="teaser">
-        <div class="card"><b>כותרת ממירה לדף נחיתה</b><br>יצירת 10 וריאציות עם הבטחת תוצאה וטון רגשי.</div>
-        <div class="card"><b>פתיח אמפתי קצר</b><br>נוסחה של 70 מילים לזיהוי כאב, תקווה ופתרון לקהל שלך.</div>
-        <div class="card"><b>קמפיין 7 ימים להשקה רכה</b><br>בניית רצף 7 ימי טיזר, עדות ודחיפות להשקות מוצרים.</div>
-        <div class="card"><b>Retargeting השארת עגלה</b><br>3 מודעות רימרקטינג אפקטיביות למבקרים שלא המירו (רגשי, חברתי, רציונלי).</div>
-        <div class="card"><b>פירוק התנגדות עיקרית</b><br>מענה בשלושה חלקים להתנגדות הגדולה ביותר למוצר שלך (אמפתיה→הוכחה).</div>
-        <div class="card"><b>FAQ ממיר</b><br>6 שאלות ותשובות שמסירות התנגדויות ומכניסות CTA עדין.</div>
+        <div class="card card-color-1"><b>כותרת ממירה לדף נחיתה</b><br>יצירת 10 וריאציות עם הבטחת תוצאה וטון רגשי.</div>
+        <div class="card card-color-2"><b>פתיח אמפתי קצר</b><br>נוסחה של 70 מילים לזיהוי כאב, תקווה ופתרון לקהל שלך.</div>
+        <div class="card card-color-3"><b>קמפיין 7 ימים להשקה רכה</b><br>בניית רצף 7 ימי טיזר, עדות ודחיפות להשקות מוצרים.</div>
+        <div class="card card-color-4"><b>Retargeting השארת עגלה</b><br>3 מודעות רימרקטינג אפקטיביות למבקרים שלא המירו (רגשי, חברתי, רציונלי).</div>
+        <div class="card card-color-5"><b>פירוק התנגדות עיקרית</b><br>מענה בשלושה חלקים להתנגדות הגדולה ביותר למוצר שלך (אמפתיה→הוכחה).</div>
+        <div class="card card-color-6"><b>FAQ ממיר</b><br>6 שאלות ותשובות שמסירות התנגדויות ומכניסות CTA עדין.</div>
       </div>
       <div class="btn-row">
         <a class="btn" href="https://links.payboxapp.com/1G1C8QGt9Xb" target="_blank" rel="noopener">לחצו כאן לגישה מיידית</a>
