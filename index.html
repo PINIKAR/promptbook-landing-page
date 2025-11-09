@@ -48,15 +48,17 @@
     }
     /* HERO - פתיח */
     .hero{
-        display:grid;grid-template-columns:1.2fr .8fr;gap:30px;align-items:center;padding:24px 0;
+        display:grid;grid-template-columns:1fr; /* שינוי: הופך לטור אחד */
+        gap:30px;align-items:center;padding:40px 0;
+        text-align: center; /* מיקוד הכותרת */
         background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 100 100'%3E%3Cdefs%3E%3Cstyle%3E .c1%7Bfill:none;stroke:%23%5Bc1%5D;stroke-width:1%7D .c2%7Bfill:%23%5Bc2%5D%7D %3C/style%3E%3C/defs%3E%3Cpath class='c1' d='M0 50 L50 0 L100 50 L50 100 Z'/%3E%3Ccircle class='c2' cx='50' cy='50' r='5'/%3E%3C/svg%3E".replace('%5Bc1%5D', '933ec720').replace('%5Bc2%5D', '1e95df10')) repeat;
         background-size: 80px 80px;
     }
     .hero h1{
-        margin:0 0 10px;font-size:46px;line-height:1.1;color:var(--c1);font-weight:900;
+        margin:0 auto 15px;max-width: 900px; font-size:46px;line-height:1.1;color:var(--c1);font-weight:900;
         text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4); 
     } 
-    .hero p{margin:0 0 20px;color:#444;font-size:18px;} 
+    .hero p{margin:0 auto 30px;max-width: 700px; color:#444;font-size:18px;} 
     /* CTA - מושך תשומת לב */
     .cta{
       display:inline-block;background:var(--c1);color:white;padding:18px 36px;border-radius:30px;
@@ -69,7 +71,7 @@
     }
 
     .micro{font-size:13px;color:var(--danger);margin-top:8px} 
-    /* כל הסקשנים - פינות עגולות וצללית + תיקון רקע */
+    /* כל הסקשנים - פינות עגולות וצללית */
     .sec{background:var(--card-bg);border:1px solid rgba(95,90,215,0.2); 
         border-radius:20px;padding:25px;margin:20px 0;box-shadow:0 6px 15px rgba(0,0,0,0.05)} 
     .sec:nth-child(even){background:var(--alt-bg);border-color:rgba(30,149,223,0.2);} 
@@ -115,10 +117,10 @@
     .btn.alt{background:var(--card-bg);color:var(--c2);border:1px solid var(--c2)}
     /* שאלות נפוצות - תיקון פונקציונליות ועיצוב */
     .faq details{border:1px solid #eceff1;border-radius:16px;margin:10px 0;padding:12px;background:var(--card-bg);box-shadow: 0 2px 4px rgba(0,0,0,0.05)}
-    .faq summary{font-weight:700;cursor:pointer;color:var(--c1);padding-right:10px; outline: none; /* תיקון פוקוס */ list-style: none;} 
-    .faq summary::-webkit-details-marker {display: none;} /* הסתרת ה-marker המובנה */
-    .faq summary:before {content: '▶'; margin-inline-end: 10px; color: var(--c2);} /* החזרת חץ פתיחה */
-    .faq details[open] summary:before {content: '▼';} /* חץ פתיחה/סגירה */
+    .faq summary{font-weight:700;cursor:pointer;color:var(--c1);padding-right:10px; outline: none; list-style: none;} 
+    .faq summary::-webkit-details-marker {display: none;} 
+    .faq summary:before {content: '▶'; margin-inline-end: 10px; color: var(--c2);} 
+    .faq details[open] summary:before {content: '▼';} 
     .faq details div{padding-top:10px;padding-right:10px;color:#444}
     /* עליי - בולטות התמונה */
     .about{display:flex;gap:20px;align-items:center;background:var(--alt-bg);border-color:var(--c4)}
@@ -224,7 +226,6 @@
       <h2>שאלות נפוצות</h2>
       <details><summary>איך מקבלים גישה?</summary><div>מיד אחרי התשלום, לינק גישה נשלח למייל.</div></details>
       <details><summary>אפשר קבלה?</summary><div>כן. מתקבלת אוטומטית למייל.</div></details>
-      <details><summary>האם יש החזר כספי?</summary><div>מדיניות ההחזרים המלאה מפורטת בתנאי השימוש. פנה/י אלינו דרך עמוד צור קשר.</div></details> 
       <details><summary>זה עובד גם בנייד?</summary><div>כן.</div></details>
       <details><summary>אפשר לשתף?</summary><div>רישיון אישי. לצוותים – דברו איתי.</div></details>
     </section>
