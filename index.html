@@ -2,7 +2,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>PromptBook – 101 פרומפטים בעברית</title>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Hebrew:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Hebrew:wght@400;600;700;800;900&display=swap" rel="stylesheet">
   <style>
     /* צבעי מותג */
     :root{
@@ -48,8 +48,17 @@
       padding:6px 15px; 
     }
     /* HERO - פתיח */
-    .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:30px;align-items:center;padding:24px 0}
-    .hero h1{margin:0 0 10px;font-size:40px;line-height:1.2;color:var(--c1);font-weight:800} 
+    .hero{
+        display:grid;grid-template-columns:1.2fr .8fr;gap:30px;align-items:center;padding:24px 0;
+        /* הוספת רקע מעניין */
+        background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 100 100'%3E%3Cdefs%3E%3Cstyle%3E .c1%7Bfill:none;stroke:%23%5Bc1%5D;stroke-width:1%7D .c2%7Bfill:%23%5Bc2%5D%7D %3C/style%3E%3C/defs%3E%3Cpath class='c1' d='M0 50 L50 0 L100 50 L50 100 Z'/%3E%3Ccircle class='c2' cx='50' cy='50' r='5'/%3E%3C/svg%3E".replace('%5Bc1%5D', '933ec720').replace('%5Bc2%5D', '1e95df10')) repeat;
+        background-size: 80px 80px;
+    }
+    /* כותרת - הוספת הצללה */
+    .hero h1{
+        margin:0 0 10px;font-size:40px;line-height:1.2;color:var(--c1);font-weight:900; 
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* צל טקסט עדין */
+    } 
     .hero p{margin:0 0 20px;color:#444}
     /* CTA - מושך תשומת לב */
     .cta{
@@ -62,7 +71,7 @@
         box-shadow: 0 8px 20px rgba(147,62,199,0.5);
     }
 
-    .micro{font-size:13px;color:#666;margin-top:8px}
+    .micro{font-size:13px;color:var(--danger);margin-top:8px} /* שינוי: הפיכת טקסט ההחזר לורוד אזהרה */
     /* כל הסקשנים - פינות עגולות יותר וצללית */
     .sec{background:var(--card-bg);border:1px solid var(--c4);border-radius:20px;padding:25px;margin:20px 0;box-shadow:0 6px 15px rgba(0,0,0,0.05)} 
     .sec:nth-child(even){background:var(--alt-bg);border-color:var(--c2);} 
@@ -110,8 +119,8 @@
     @media (max-width:900px){.hero{grid-template-columns:1fr}}
   </style></head><body>
   <div class="bar">
-    <span class="badge">חגיגות 50 שלי!</span>
-    <span>מבצע מיוחד מסתיים בעוד</span>
+    <span class="badge">מבצע 50 שנה!</span>
+    <span>כל הידע בפרומפטבוק ב-68% הנחה! נגמר בעוד</span>
     <span class="time" id="timer">00:00:00</span>
   </div>
 
@@ -126,7 +135,7 @@
     <section class="hero">
       <div>
         <h1>הקץ לטקסטים רובוטיים: 101 הפרומפטים שמוסיפים נשמה ל-AI שלך (ובאמת מוכרים בעברית)</h1>
-        <p><strong>אם ה-AI כותב לך טקסטים קרים שפשוט לא ממירים, את/ה לא לבד.</strong> בניתי את PromptBook – המדריך היחיד שמחבר כתיבה רגשית עם טכנולוגיה חכמה. כל פרומפט הוא נוסחה בדוקה, מסודרת לפי קטגוריות, שמוכנה ל"העתק-הדבק" כדי ליצור תוכן שמדבר ישר ללב הלקוחות הישראלים.</p>
+        <p><strong>אם ה-AI כותב לך טקסטים קרים שפשוט לא ממירים, את/ה לא לבד/ה.</strong> בניתי את PromptBook – המדריך היחיד שמחבר כתיבה רגשית עם טכנולוגיה חכמה. כל פרומפט הוא נוסחה בדוקה, מסודרת לפי קטגוריות, שמוכנה ל"העתק-הדבק" כדי ליצור תוכן שמדבר ישר ללב הלקוחות הישראלים.</p>
         <a id="payTop" class="cta" href="https://links.payboxapp.com/1G1C8QGt9Xb" target="_blank" rel="noopener">קבל גישה מיידית לחוברת</a>
         <div class="micro">גישה מיד אחרי תשלום | קבלה מסודרת למייל</div>
       </div>
@@ -148,7 +157,7 @@
         <div class="card"><b>כותרת ממירה לדף נחיתה</b><br>יצירת 10 וריאציות עם הבטחת תוצאה וטון רגשי.</div>
         <div class="card"><b>פתיח אמפתי קצר</b><br>נוסחה של 70 מילים לזיהוי כאב, תקווה ופתרון לקהל שלך.</div>
         <div class="card"><b>קמפיין 7 ימים להשקה רכה</b><br>בניית רצף 7 ימי טיזר, עדות ודחיפות להשקות מוצרים.</div>
-        <div class="card"><b>Retargeting השארת עגלה</b><br>3 מודעות רימרקטינג למבקרים שלא המירו (רגשי, חברתי, רציונלי).</div>
+        <div class="card"><b>Retargeting השארת עגלה</b><br>3 מודעות רימרקטינג אפקטיביות למבקרים שלא המירו (רגשי, חברתי, רציונלי).</div>
         <div class="card"><b>פירוק התנגדות עיקרית</b><br>מענה בשלושה חלקים להתנגדות הגדולה ביותר למוצר שלך (אמפתיה→הוכחה).</div>
         <div class="card"><b>FAQ ממיר</b><br>6 שאלות ותשובות שמסירות התנגדויות ומכניסות CTA עדין.</div>
       </div>
@@ -185,16 +194,14 @@
       </div>
       <div class="btn-row">
         <a id="payBottom" class="cta" href="https://links.payboxapp.com/1G1C8QGt9Xb" target="_blank" rel="noopener">רכישה עכשיו</a>
-        <div class="micro">אחריות 7 ימים – החזר מלא אם זה לא בשבילך</div>
-      </div>
+        </div>
     </section>
 
     <section class="sec faq">
       <h2>שאלות נפוצות</h2>
       <details><summary>איך מקבלים גישה?</summary><div>מיד אחרי התשלום, לינק גישה נשלח למייל.</div></details>
       <details><summary>אפשר קבלה?</summary><div>כן. מתקבלת אוטומטית למייל.</div></details>
-      <details><summary>לא מרוצה?</summary><div>יש אחריות 7 ימים – החזר מלא.</div></details>
-      <details><summary>זה עובד גם בנייד?</summary><div>כן.</div></details>
+      <details><summary>האם יש החזר כספי?</summary><div>מדיניות ההחזרים המלאה מפורטת בתנאי השימוש. פנה אלינו תוך 7 ימים.</div></details> <details><summary>זה עובד גם בנייד?</summary><div>כן.</div></details>
       <details><summary>אפשר לשתף?</summary><div>רישיון אישי. לצוותים – דברו איתי.</div></details>
     </section>
 
