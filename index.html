@@ -19,14 +19,10 @@
       --shadow-color: rgba(147, 62, 199, 0.5); /* צל ממותג */
     }
     @keyframes colorChange {
-        0% { background-color: var(--c1); } /* אנימציה להדר הראשי */
-        50% { background-color: var(--c2); }
-        100% { background-color: var(--c1); }
-    }
-    @keyframes pulseDanger {
-        0% { background-color: var(--danger); box-shadow: 0 0 10px rgba(248, 97, 115, 0.9); }
-        50% { background-color: rgba(248, 97, 115, 0.8); box-shadow: none; } /* צבע שקוף יותר */
-        100% { background-color: var(--danger); box-shadow: 0 0 10px rgba(248, 97, 115, 0.9); }
+        0% { background-color: var(--c1); } /* סגול */
+        33% { background-color: var(--c2); } /* טורקיז */
+        66% { background-color: var(--c3); } /* כחול כהה */
+        100% { background-color: var(--c1); } 
     }
     
     html,body{font-family:var(--font);margin:0;background:var(--bg);color:var(--text)}
@@ -35,10 +31,10 @@
     header img{height:50px}
     header div{font-size: 24px; font-weight: 700; color: var(--c3);}
 
-    /* פס הטיימר */
+    /* פס הטיימר - מהירות וצבעים תוקנו */
     .bar{
       position:sticky;top:0;z-index:10;background:var(--c1); 
-      animation: colorChange 10s infinite alternate; 
+      animation: colorChange 15s infinite alternate; /* איטי יותר (15 שניות) */
       color:white;
       display:flex;gap:10px;align-items:center;justify-content:center;padding:14px 12px; 
       font-size:18px;
@@ -52,27 +48,6 @@
       border-radius:30px; 
       padding:6px 15px; 
     }
-    
-    /* פס המכירה הדרמטי החדש (מוצמד לכותרת) */
-    .promo-bar-static{
-        background-color: var(--danger);
-        color: white;
-        text-align: center;
-        font-size: 18px; /* קטן יותר מהבר הראשי */
-        font-weight: 800;
-        padding: 12px 20px;
-        border-radius: 30px; /* עגול מאוד */
-        margin: 20px auto 30px;
-        width: fit-content;
-        line-height: 1.4;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-        /* יישום האנימציה החדשה */
-        animation: pulseDanger 1.5s infinite alternate; 
-    }
-    .promo-bar-static span{font-size: 20px; font-weight: 900;}
-    .promo-bar-static img { height: 20px; vertical-align: middle; margin-inline-start: 8px;}
-
-
     /* HERO - ממורכז, נקי ובולט */
     .hero{
         display:grid;grid-template-columns:1fr; 
@@ -96,8 +71,9 @@
         transform: translateY(-2px) scale(1.03); 
         box-shadow: 0 10px 25px var(--shadow-color);
     }
+    /* שינוי: המיקרו-קופי נמחק כליל כדי לא ליצור רעש */
+    .micro{display: none;} 
 
-    .micro{font-size:13px;color:var(--danger);margin-top:8px} 
     /* סקשנים - מעבר לרקע מתחלף נקי */
     .sec{border-radius:20px;padding:30px;margin:25px 0;box-shadow:0 6px 15px rgba(0,0,0,0.05)} 
     .sec:nth-child(even){background:var(--alt-bg);border-color:rgba(30,149,223,0.2);} 
@@ -187,8 +163,7 @@
         <h1>הקץ לטקסטים רובוטיים: 101 הפרומפטים שמוסיפים נשמה ל-AI שלך (ובאמת מוכרים בעברית)</h1>
         <p><strong>אם ה-AI כותב לכם טקסטים קרים שפשוט לא ממירים, אתם לא לבד.</strong></p>
         <a id="payTop" class="cta" href="https://links.payboxapp.com/1G1C8QGt9Xb" target="_blank" rel="noopener">קבלו גישה מיידית לכלי</a>
-        <div class="micro">גישה מיד אחרי תשלום</div>
-      </div>
+        </div>
     </section>
 
     <section class="sec">
