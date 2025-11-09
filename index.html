@@ -25,8 +25,8 @@
     
     html,body{font-family:var(--font);margin:0;background:var(--bg);color:var(--text)}
     .wrap{max-width:1050px;margin:0 auto;padding:20px}
-    /* Header - נקי וממותג */
-    header{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:3px solid var(--c2);background:var(--card-bg)}
+    /* Header - נקי וממותג + קישור הבית */
+    header{padding:10px 0;border-bottom:3px solid var(--c2);background:var(--card-bg)}
     header img{height:50px}
     header div{font-size: 24px; font-weight: 700; color: var(--c3);}
 
@@ -92,7 +92,7 @@
     .price{display:flex;gap:15px;align-items:baseline;flex-wrap:wrap}
     .price .num{font-size:52px;font-weight:800;color:var(--c1)}
     .price div{font-size:18px;font-weight:600;color:#555}
-    .price .strikethrough{text-decoration: line-through; font-size: 20px; color: var(--danger);} /* קו חוצה בולט */
+    .price .strikethrough{text-decoration: line-through; font-size: 20px; color: var(--danger);} 
     .btn-row{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-top:15px}
     .btn{background:var(--c3);color:#fff;padding:12px 18px;border-radius:30px;text-decoration:none;font-weight:600}
     .btn.alt{background:var(--card-bg);color:var(--c2);border:1px solid var(--c2)}
@@ -116,8 +116,10 @@
   </div>
 
   <header class="wrap">
-    <img src="logo.png" alt="PromptBook">
-    <div>PromptBook – 101 פרומפטים בעברית</div>
+    <a href="index.html" style="display: flex; align-items: center; gap: 12px; text-decoration: none;">
+        <img src="logo.png" alt="PromptBook">
+        <div>PromptBook – 101 פרומפטים בעברית</div>
+    </a>
   </header>
 
   <main class="wrap">
@@ -217,7 +219,6 @@
   <script>
     // === הגדרת דד-ליין לטיימר ===
     // התאריך המבוקש: 30 בנובמבר 2025, 23:59:59
-    // החודשים ממוספרים מ-0 (נובמבר הוא 10)
     const deadline = new Date(2025, 10, 30, 23, 59, 59).getTime();
 
     const $timer = document.getElementById('timer');
