@@ -11,7 +11,7 @@
       --c2:#1e95df; /* כחול טורקיז/ משני */ 
       --c3:#337cdc; /* כחול כהה */ 
       --c4:#5f5ad7; /* כחול סגול / גבולות */
-      --danger:#f86173; /* ורוד-אדום */
+      --danger:#f86173; /* ורוד-אדום (לפס המכירה הבולט) */
       --text:#111;
       --bg:#fcfcff; /* רקע בהיר מאוד */
       --card-bg:#ffffff;
@@ -47,6 +47,22 @@
       border-radius:30px; 
       padding:6px 15px; 
     }
+    
+    /* פס המכירה הדרמטי החדש (מוצמד לכותרת) */
+    .hero .promo-bar-static{
+        background-color: var(--danger);
+        color: white;
+        font-size: 16px;
+        font-weight: 800;
+        padding: 10px 15px;
+        border-radius: 30px; 
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        margin: 0 auto 30px; /* מרווח מלמעלה ומלמטה */
+        width: fit-content;
+        letter-spacing: 0.5px;
+    }
+
+
     /* HERO - ממורכז, נקי ובולט */
     .hero{
         display:grid;grid-template-columns:1fr; 
@@ -89,7 +105,7 @@
     }
     .star-rating{font-size:20px;color:gold;margin-bottom:10px}
     
-    /* כפתורי הטעימה - תיקון קריטי להפרדה */
+    /* כפתורי הטעימה */
     .btn-row{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-top:20px;} 
     .btn, .btn.alt{ 
         display: inline-block; 
@@ -103,18 +119,22 @@
     }
     .btn{background:var(--c3);color:#fff;}
     .btn.alt{background:var(--card-bg);color:var(--c2);border:1px solid var(--c2);}
-
-    /* טעימה / כרטיסיות - תיקון הפרדה סופי */
-    .teaser{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:15px; padding: 15px 0;} /* רווח גדול יותר בין השורות */
-    .card{
-        background:#f8faff; /* Light Blue background for contrast */
-        border:2px solid var(--c2); /* מסגרת מודגשת */
-        border-radius:16px;padding:18px; /* פאדינג גדול יותר */
-        box-shadow: 0 4px 10px rgba(0,0,0,0.15); /* צל חזק יותר */
-        transition: box-shadow 0.3s;
-        color: var(--text); 
+    
+    /* מחיר בולט */
+    .price-block{text-align: center; background:var(--alt-bg); border-radius:20px; padding: 40px;}
+    .price-block h2{ 
+        font-size: 32px; 
+        font-weight: 900; 
+        color: var(--c1); 
+        border-bottom: none; 
+        padding-bottom: 0; 
+        margin-bottom: 25px;
     }
-    .card b{color:var(--c3); font-size: 18px;} /* הדגשת הכותרת בכרטיס */
+    .price-block .price {display: block; padding-top: 20px;}
+    .price-block .price .strikethrough-price{font-size: 30px; text-decoration: line-through; color: var(--danger); opacity: 0.7; margin-bottom: -15px; display: block;}
+    .price-block .price .num{font-size: 100px; font-weight: 900; color: var(--c2); line-height: 1;display: block;} 
+    .price-block .price .savings{font-size: 26px; font-weight: 700; color: var(--danger); margin-top: 15px;display: block;}
+    .price-block .value-line {font-size: 16px;font-weight: 500;color: var(--c3);margin-top: 30px;}
     
     /* FAQ - תיקון פונקציונליות סופי */
     .faq summary{font-weight:700;cursor:pointer;color:var(--c1);padding-right:10px; outline: none; list-style: none;} 
@@ -127,6 +147,7 @@
     .bullets{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:15px}
     .bullets li{list-style:none;font-weight:700;color:var(--text);padding: 10px; background: #fff; border:2px solid #e0e0e0; border-radius:12px;}
     .bullets li:before{content:"✨";margin-inline-end:8px;} 
+    .teaser{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:15px}
     .about img{width:100px;height:100px;border:4px solid var(--c1);border-radius:50%;object-fit:cover;box-shadow: 0 0 0 2px white, 0 0 0 5px var(--c2);} 
     footer{color:#666;font-size:13px;text-align:center;padding:16px 0}
     footer a{color:var(--c3);text-decoration:none}
@@ -147,6 +168,11 @@
 
   <main class="wrap">
     <section class="hero">
+      
+      <div class="promo-bar-static">
+            מבצע יום הולדת בלעדי - חוסכים 268 ₪! 🔥
+      </div>
+
       <div>
         <h1>הקץ לטקסטים רובוטיים: 101 הפרומפטים שמוסיפים נשמה ל-AI שלך (ובאמת מוכרים בעברית)</h1>
         <p><strong>אם ה-AI כותב לכם טקסטים קרים שפשוט לא ממירים, אתם לא לבד.</strong></p>
