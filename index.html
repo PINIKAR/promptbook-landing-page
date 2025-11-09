@@ -11,26 +11,44 @@
       --c2:#1e95df; /* כחול טורקיז/ משני */ 
       --c3:#337cdc; /* כחול כהה */ 
       --c4:#5f5ad7; /* כחול סגול / גבולות */
-      --danger:#f86173; /* ורוד-אדום / טיימר / מכירה */
+      --danger:#f86173; /* ורוד-אדום / טיימר (משמש רק כצבע אזהרה/טקסט עכשיו) */
       --text:#111;
       --bg:#fcfcff; /* רקע בהיר מאוד */
       --card-bg:#ffffff;
       --alt-bg:#f5faff; /* רקע מתחלף עדין */
     }
+    /* אנימציית מעבר צבעים לטיימר */
+    @keyframes colorChange {
+        0% { background-color: var(--c1); }
+        50% { background-color: var(--c2); }
+        100% { background-color: var(--c1); }
+    }
+    
     html,body{font-family:var(--font);margin:0;background:var(--bg);color:var(--text)}
     .wrap{max-width:1050px;margin:0 auto;padding:20px}
     /* Header - נקי וממותג */
     header{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:3px solid var(--c2);background:var(--card-bg)}
     header img{height:50px}
-    /* פס הטיימר - בולט ודביק */
+    /* תיקון: כותרת ליד הלוגו */
+    header div{font-size: 24px; font-weight: 700; color: var(--c3);}
+
+    /* פס הטיימר - בולט ודביק + אנימציה */
     .bar{
-      position:sticky;top:0;z-index:10;background:var(--danger);color:white;
+      position:sticky;top:0;z-index:10;background:var(--c1); /* צבע בסיס */
+      animation: colorChange 10s infinite alternate; /* אנימציה איטית */
+      color:white;
       display:flex;gap:10px;align-items:center;justify-content:center;padding:12px 12px;
       font-size:16px;
       font-weight:700;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* הצללה קטנה לבולטות */
     }
     .bar .time{font-weight:900;color:yellow}
-    .bar .badge{background:rgba(255,255,255,0.2);border:1px solid rgba(255,255,255,0.5);border-radius:999px;padding:4px 10px}
+    .bar .badge{
+      background:rgba(255,255,255,0.2);
+      border:1px solid rgba(255,255,255,0.5);
+      border-radius:30px; /* יותר עגול */
+      padding:6px 15px; /* יותר בולט */
+    }
     /* HERO - פתיח */
     .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:30px;align-items:center;padding:24px 0}
     .hero h1{margin:0 0 10px;font-size:40px;line-height:1.2;color:var(--c1);font-weight:800} /* כותרת יותר בולטת */
@@ -71,7 +89,7 @@
     @media (max-width:900px){.hero{grid-template-columns:1fr}}
   </style></head><body>
   <div class="bar">
-    <span class="badge">חגיגות 50 של פנינה!</span>
+    <span class="badge">חגיגות 50 שלי!</span>
     <span>מבצע מיוחד מסתיים בעוד</span>
     <span class="time" id="timer">00:00:00</span>
   </div>
@@ -186,7 +204,7 @@
     function pad(n){ return n.toString().padStart(2,'0'); }
     function tick(){
       const now = Date.now();
-      let diff = Math.max(F0, deadline - now);
+      let diff = Math.max(0, deadline - now);
       const s = Math.floor(diff/1000)%60;
       const m = Math.floor(diff/1000/60)%60;
       const h = Math.floor(diff/1000/60/60)%24;
@@ -195,8 +213,8 @@
       $timer.textContent = out;
 
       if(diff===0){
-        // סיום ההצעה: משנים רקע ל-אדום ומנטרלים כפתורים
-        document.querySelector('.bar').style.background = 'var(--c3)'; // חוזר לצבע כחול כהה
+        // סיום ההצעה: משנים רקע ל-כחול כהה ומנטרלים כפתורים
+        document.querySelector('.bar').style.background = 'var(--c3)'; 
         $timer.style.color = 'white';
         document.querySelector('.bar span:nth-child(2)').textContent = 'ההצעה הסתיימה';
         buttons.forEach(b=>{
@@ -207,5 +225,7 @@
         clearInterval(iv);
       }
     }
-    const iv = setInterval(tick, 1000); tick();
+    // הפעלה מיידית של הפונקציה כדי להציג את הזמן מיד
+    tick();
+    const iv = setInterval(tick, 1000); 
   </script></body></html>
