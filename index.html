@@ -11,7 +11,7 @@
       --c2:#1e95df; /* כחול טורקיז/ משני */ 
       --c3:#337cdc; /* כחול כהה */ 
       --c4:#5f5ad7; /* כחול סגול / גבולות */
-      --danger:#f86173; /* ורוד-אדום (לפס המכירה הבולט) */
+      --danger:#f86173; /* ורוד-אדום */
       --text:#111;
       --bg:#fcfcff; /* רקע בהיר מאוד */
       --card-bg:#ffffff;
@@ -47,23 +47,6 @@
       border-radius:30px; 
       padding:6px 15px; 
     }
-
-    /* פס המכירה הדרמטי החדש */
-    .promo-strip{
-        background-color: var(--danger);
-        color: white;
-        text-align: center;
-        font-size: 20px;
-        font-weight: 800;
-        padding: 15px 20px;
-        border-radius: 12px; /* פינות מעוגלות */
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-        margin: 20px auto;
-        max-width: 900px;
-        line-height: 1.4;
-    }
-    .promo-strip span{font-size: 28px; font-weight: 900;}
-
     /* HERO - ממורכז, נקי ובולט */
     .hero{
         display:grid;grid-template-columns:1fr; 
@@ -104,6 +87,26 @@
     }
     .star-rating{font-size:20px;color:gold;margin-bottom:10px}
     
+    /* תועלות / בולטים - תיקון קריטי לניגודיות ועיצוב */
+    .bullets{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:15px}
+    .bullets li{
+        list-style:none;font-weight:700; /* הדגשת טקסט חזקה יותר */
+        color:var(--text);padding: 10px;
+        background: #fff; /* ודא רקע לבן בתוך הקוביות */
+        border:2px solid #e0e0e0;
+        border-radius:12px;
+    }
+    .bullets li:before{content:"✨";margin-inline-end:8px;} 
+    
+    /* טעימה / כרטיסיות */
+    .teaser{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:15px}
+    .card{
+        background:#f8faff;border:1px solid var(--c2);border-radius:16px;padding:15px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.08); 
+        transition: box-shadow 0.3s;
+        color: var(--text); /* ודא שהטקסט שחור */
+    }
+    
     /* מחיר בולט - עדכון קריטי */
     .price-block{text-align: center; background:var(--alt-bg); border-radius:20px; padding: 40px;}
     .price-block h2{ 
@@ -114,18 +117,12 @@
         padding-bottom: 0; 
         margin-bottom: 25px;
     }
-    .price-block .price {display: block; padding-top: 20px;}
-    .price-block .price .strikethrough-price{font-size: 30px; text-decoration: line-through; color: var(--danger); opacity: 0.7; margin-bottom: -15px; display: block;}
-    .price-block .price .num{font-size: 100px; font-weight: 900; color: var(--c2); line-height: 1;display: block;} 
-    .price-block .price .savings{font-size: 26px; font-weight: 700; color: var(--danger); margin-top: 15px;display: block;}
-    .price-block .value-line {font-size: 16px;font-weight: 500;color: var(--c3);margin-top: 30px;}
-    
+    /* FAQ */
+    .faq summary{font-weight:700;cursor:pointer;color:var(--c1);padding-right:10px; outline: none; list-style: none;} 
+    .faq summary::-webkit-details-marker {display: none;} 
+    .faq summary:before {content: '▶'; margin-inline-end: 10px; color: var(--c2);} 
+    .faq details[open] summary:before {content: '▼';} 
     /* כללי */
-    .bullets{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:15px}
-    .bullets li{list-style:none;font-weight:500;color:var(--text);padding: 10px;}
-    .bullets li:before{content:"✨";margin-inline-end:8px;} 
-    .teaser{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:15px}
-    .about{display:flex;gap:20px;align-items:center;background:var(--alt-bg);border-color:var(--c4)}
     .about img{width:100px;height:100px;border:4px solid var(--c1);border-radius:50%;object-fit:cover;box-shadow: 0 0 0 2px white, 0 0 0 5px var(--c2);} 
     footer{color:#666;font-size:13px;text-align:center;padding:16px 0}
     footer a{color:var(--c3);text-decoration:none}
@@ -154,16 +151,10 @@
       </div>
     </section>
 
-    <div class="wrap" style="padding-top: 0;">
-        <div class="promo-strip">
-            מבצע יום הולדת בלעדי - חוסכים <span>268 ₪</span>! 🔥
-        </div>
-    </div>
-
     <section class="sec">
       <h2>מה בפנים</h2>
       <ul class="bullets">
-        <li>101 פרומפטים בתוך **אפליקציה אינטראקטיבית** ב־10 קטגוריות</li>
+        <li>101 פרומפטים בתוך <strong>אפליקציה אינטראקטיבית</strong> ב־10 קטגוריות</li>
         <li>חיפוש + סינון לפי קהל יעד</li>
         <li>כפתור "העתק" + מועדפים</li>
         <li>ייצוא PDF בעברית</li>
