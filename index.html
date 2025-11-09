@@ -11,22 +11,27 @@
       --c2:#1e95df; /* כחול טורקיז/ משני */ 
       --c3:#337cdc; /* כחול כהה */ 
       --c4:#5f5ad7; /* כחול סגול / גבולות */
-      --danger:#f86173; /* ורוד-אדום */
+      --danger:#f86173; /* ורוד-אדום (בסיס) */
+      --danger-dark:#e74c3c; /* ורוד-אדום כהה */
+      --danger-light:#ffa0aa; /* ורוד-אדום בהיר */
       --text:#111;
       --bg:#fcfcff; /* רקע בהיר מאוד */
       --card-bg:#ffffff;
       --alt-bg:#f8f9ff; /* רקע מתחלף נקי */
       --shadow-color: rgba(147, 62, 199, 0.5); /* צל ממותג */
     }
+    /* אנימציה ראשית - 3 צבעים (Header) */
     @keyframes colorChange {
         0% { background-color: var(--c1); }
         33% { background-color: var(--c2); }
         66% { background-color: var(--c3); }
         100% { background-color: var(--c1); }
     }
+    /* אנימציה למבצע - 3 גווני ורוד/אדום (Promo Bar) */
     @keyframes pulseDanger {
         0% { background-color: var(--danger); box-shadow: 0 0 10px rgba(248, 97, 115, 0.9); }
-        50% { background-color: rgba(248, 97, 115, 0.6); box-shadow: none; } 
+        33% { background-color: var(--danger-dark); box-shadow: 0 0 5px var(--danger-dark); }
+        66% { background-color: var(--danger-light); box-shadow: 0 0 15px var(--danger-light); }
         100% { background-color: var(--danger); box-shadow: 0 0 10px rgba(248, 97, 115, 0.9); }
     }
     
@@ -39,7 +44,7 @@
     /* פס הטיימר */
     .bar{
       position:sticky;top:0;z-index:10;background:var(--c1); 
-      animation: colorChange 15s infinite alternate; 
+      animation: colorChange 15s infinite alternate; /* 15 שניות */
       color:white;
       display:flex;gap:10px;align-items:center;justify-content:center;padding:14px 12px; 
       font-size:18px;
@@ -67,8 +72,9 @@
         width: fit-content;
         line-height: 1.4;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-        animation: pulseDanger 1.5s infinite alternate; 
+        animation: pulseDanger 3s infinite alternate; /* 3 שניות - איטי וחלק */
     }
+
 
     /* HERO - ממורכז, נקי ובולט */
     .hero{
@@ -112,7 +118,7 @@
     }
     .star-rating{font-size:20px;color:gold;margin-bottom:10px}
     
-    /* כפתורי הטעימה - תיקון קריטי להפרדה */
+    /* כפתורי הטעימה */
     .btn-row{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-top:20px;} 
     .btn, .btn.alt{ 
         display: inline-block; 
@@ -126,28 +132,7 @@
     }
     .btn{background:var(--c3);color:#fff;}
     .btn.alt{background:var(--card-bg);color:var(--c2);border:1px solid var(--c2);}
-
-    /* טעימה / כרטיסיות - תיקון הפרדה סופי */
-    .teaser{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:15px; padding: 15px 0;} 
-    .card{
-        /* הסרת ה-box-shadow כדי שהרקע הצבעוני יבלוט יותר */
-        border:2px solid transparent; 
-        border-radius:16px;padding:18px; 
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
-        color: var(--text); 
-        transition: transform 0.3s;
-    }
-    .card:hover{
-        transform: translateY(-2px);
-    }
-    /* גווני הפסטל הממותגים */
-    .card:nth-child(6n+1) { background-color: #E6E0F1; border-color: rgba(147, 62, 199, 0.5); } /* סגול פסטל */
-    .card:nth-child(6n+2) { background-color: #E0F5FF; border-color: rgba(30, 149, 223, 0.5); } /* טורקיז פסטל */
-    .card:nth-child(6n+3) { background-color: #FFE0E5; border-color: rgba(248, 97, 115, 0.5); } /* ורוד פסטל */
-    .card:nth-child(6n+4) { background-color: #F0F4E8; border-color: rgba(153, 172, 114, 0.5); } 
-    .card:nth-child(6n+5) { background-color: #F8F9FF; border-color: rgba(95, 90, 215, 0.5); }
-    .card:nth-child(6n+6) { background-color: #FFF9E0; border-color: rgba(255, 204, 0, 0.5); }
-
+    
     /* מחיר בולט */
     .price-block{text-align: center; background:var(--alt-bg); border-radius:20px; padding: 40px;}
     .price-block h2{ 
