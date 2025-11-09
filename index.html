@@ -10,12 +10,12 @@
       --c1:#933ec7; /* סגול ראשי / CTA */ 
       --c2:#1e95df; /* כחול טורקיז/ משני */ 
       --c3:#337cdc; /* כחול כהה */ 
-      --c4:#5f5ad7; /* כחול סגול / גבולות */
-      --danger:#f86173; /* ורוד-אדום */
+      --c4:#5f5ad7; /* כחול סגול / גבולות (מוחלש) */
+      --danger:#f86173; /* ורוד-אדום (מחיר/דחיפות) */
       --text:#111;
       --bg:#fcfcff; /* רקע בהיר מאוד */
       --card-bg:#ffffff;
-      --alt-bg:#f5faff; /* רקע מתחלף עדין */
+      --alt-bg:#f8f9ff; /* רקע מתחלף עדין יותר */
     }
     @keyframes colorChange {
         0% { background-color: var(--c1); }
@@ -30,15 +30,15 @@
     header img{height:50px}
     header div{font-size: 24px; font-weight: 700; color: var(--c3);}
 
-    /* פס הטיימר - בולט ודביק + אנימציה */
+    /* פס הטיימר - בולט ודביק + קופי משודרג */
     .bar{
       position:sticky;top:0;z-index:10;background:var(--c1); 
       animation: colorChange 10s infinite alternate; 
       color:white;
-      display:flex;gap:10px;align-items:center;justify-content:center;padding:12px 12px;
-      font-size:16px;
+      display:flex;gap:10px;align-items:center;justify-content:center;padding:14px 12px; /* בולט יותר */
+      font-size:18px;
       font-weight:700;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); 
     }
     .bar .time{font-weight:900;color:yellow}
     .bar .badge{
@@ -50,33 +50,34 @@
     /* HERO - פתיח */
     .hero{
         display:grid;grid-template-columns:1.2fr .8fr;gap:30px;align-items:center;padding:24px 0;
-        /* הוספת רקע מעניין */
+        /* הרקע המעניין נשמר - הוא מנטרל את השעמום */
         background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 100 100'%3E%3Cdefs%3E%3Cstyle%3E .c1%7Bfill:none;stroke:%23%5Bc1%5D;stroke-width:1%7D .c2%7Bfill:%23%5Bc2%5D%7D %3C/style%3E%3C/defs%3E%3Cpath class='c1' d='M0 50 L50 0 L100 50 L50 100 Z'/%3E%3Ccircle class='c2' cx='50' cy='50' r='5'/%3E%3C/svg%3E".replace('%5Bc1%5D', '933ec720').replace('%5Bc2%5D', '1e95df10')) repeat;
         background-size: 80px 80px;
     }
-    /* כותרת - הוספת הצללה */
+    /* כותרת - הוספת הצללה ומשקל חזק */
     .hero h1{
-        margin:0 0 10px;font-size:40px;line-height:1.2;color:var(--c1);font-weight:900; 
-        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* צל טקסט עדין */
+        margin:0 0 10px;font-size:42px;line-height:1.2;color:var(--c1);font-weight:900; 
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); 
     } 
-    .hero p{margin:0 0 20px;color:#444}
+    .hero p{margin:0 0 20px;color:#444;font-size:18px;} /* פונט גדול יותר לפתיח */
     /* CTA - מושך תשומת לב */
     .cta{
-      display:inline-block;background:var(--c1);color:white;padding:16px 30px;border-radius:30px;
-      text-decoration:none;font-weight:700;box-shadow:0 6px 15px rgba(147,62,199,0.4);
+      display:inline-block;background:var(--c1);color:white;padding:18px 36px;border-radius:30px; /* גדול יותר */
+      text-decoration:none;font-weight:800;box-shadow:0 8px 20px rgba(147,62,199,0.5);
       transition: transform 0.2s, box-shadow 0.2s; 
     }
     .cta:hover{
-        transform: translateY(-2px) scale(1.02); 
-        box-shadow: 0 8px 20px rgba(147,62,199,0.5);
+        transform: translateY(-2px) scale(1.03); 
+        box-shadow: 0 10px 25px rgba(147,62,199,0.7);
     }
 
-    .micro{font-size:13px;color:var(--danger);margin-top:8px} /* שינוי: הפיכת טקסט ההחזר לורוד אזהרה */
+    .micro{font-size:13px;color:var(--danger);margin-top:8px} 
     /* כל הסקשנים - פינות עגולות יותר וצללית */
-    .sec{background:var(--card-bg);border:1px solid var(--c4);border-radius:20px;padding:25px;margin:20px 0;box-shadow:0 6px 15px rgba(0,0,0,0.05)} 
-    .sec:nth-child(even){background:var(--alt-bg);border-color:var(--c2);} 
+    .sec{background:var(--card-bg);border:1px solid rgba(95,90,215,0.2); /* גבול מוחלש */
+        border-radius:20px;padding:25px;margin:20px 0;box-shadow:0 6px 15px rgba(0,0,0,0.05)} 
+    .sec:nth-child(even){background:var(--alt-bg);border-color:rgba(30,149,223,0.2);} 
     .sec h2{margin:0 0 15px;font-size:26px;color:var(--c3);border-bottom:1px solid #eee;padding-bottom:10px;font-weight:700}
-    /* תועלות / בולטים - מראה "קליקבילי" */
+    /* תועלות / בולטים - מראה "קליקבילי" + אמוג'י */
     .bullets{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:15px}
     .bullets li{
         background:var(--bg);border:2px solid #e0e0e0;border-radius:12px;padding:12px;list-style:none;font-weight:500;color:var(--text);
@@ -85,7 +86,7 @@
     .bullets li:hover{
         border-color: var(--c1); 
     }
-    .bullets li:before{content:"✓";margin-inline-end:8px;color:var(--c1);font-weight:700} 
+    .bullets li:before{content:"✨";margin-inline-end:8px;} /* שינוי: אמוג'י נוצץ */
     /* טעימה / כרטיסיות - מראה 3D קטן */
     .teaser{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:15px}
     .card{
@@ -94,7 +95,7 @@
         transition: box-shadow 0.3s;
     }
     .card:hover{
-        box-shadow: 0 6px 12px rgba(0,0,0,0.15); 
+        box-shadow: 0 8px 16px rgba(0,0,0,0.25); /* הצללה חזקה יותר */
     }
     .card b{color:var(--c3)}
     /* מחיר */
@@ -119,7 +120,7 @@
     @media (max-width:900px){.hero{grid-template-columns:1fr}}
   </style></head><body>
   <div class="bar">
-    <span class="badge">מבצע 50 שנה!</span>
+    <span class="badge">🎁 חודש היומולדת שלי!</span>
     <span>כל הידע בפרומפטבוק ב-68% הנחה! נגמר בעוד</span>
     <span class="time" id="timer">00:00:00</span>
   </div>
@@ -194,14 +195,15 @@
       </div>
       <div class="btn-row">
         <a id="payBottom" class="cta" href="https://links.payboxapp.com/1G1C8QGt9Xb" target="_blank" rel="noopener">רכישה עכשיו</a>
-        </div>
+      </div>
     </section>
 
     <section class="sec faq">
       <h2>שאלות נפוצות</h2>
       <details><summary>איך מקבלים גישה?</summary><div>מיד אחרי התשלום, לינק גישה נשלח למייל.</div></details>
       <details><summary>אפשר קבלה?</summary><div>כן. מתקבלת אוטומטית למייל.</div></details>
-      <details><summary>האם יש החזר כספי?</summary><div>מדיניות ההחזרים המלאה מפורטת בתנאי השימוש. פנה אלינו תוך 7 ימים.</div></details> <details><summary>זה עובד גם בנייד?</summary><div>כן.</div></details>
+      <details><summary>האם יש החזר כספי?</summary><div>מדיניות ההחזרים המלאה מפורטת בתנאי השימוש. פנה אלינו תוך 7 ימים.</div></details> 
+      <details><summary>זה עובד גם בנייד?</summary><div>כן.</div></details>
       <details><summary>אפשר לשתף?</summary><div>רישיון אישי. לצוותים – דברו איתי.</div></details>
     </section>
 
