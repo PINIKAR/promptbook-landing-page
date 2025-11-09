@@ -148,11 +148,11 @@
     © PromptBook • <a href="#CONTACT">צור קשר</a> • <a href="#TERMS">תנאי שימוש</a> • <a href="#PRIVACY">פרטיות</a>
   </footer>
 
-  <script>
+<script>
     // === הגדרת דד-ליין לטיימר ===
-    // עדכני כאן את הדד-ליין: שנה, חודש-1, יום, שעה, דקות (שעון ישראל)
-    // דוגמה: 17 בנובמבר 2025, 20:00
-    const deadline = new Date(2025, 10, 17, 20, 0, 0).getTime();
+    // התאריך המבוקש: 30 בנובמבר 2025, 23:59:59
+    // החודשים ממוספרים מ-0 (נובמבר הוא 10)
+    const deadline = new Date(2025, 10, 30, 23, 59, 59).getTime();
 
     const $timer = document.getElementById('timer');
     const buttons = [document.getElementById('payTop'), document.getElementById('payBottom')];
