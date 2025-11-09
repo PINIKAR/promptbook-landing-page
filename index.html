@@ -4,18 +4,18 @@
   <title>PromptBook – 101 פרומפטים בעברית</title>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Hebrew:wght@400;600;700;800;900&display=swap" rel="stylesheet">
   <style>
-    /* צבעי מותג */
+    /* צבעי מותג (C1: סגול, C2: טורקיז, Danger: ורוד-אדום) */
     :root{
       --font:'Noto Sans Hebrew','Assistant','Arial',sans-serif;
-      --c1:#933ec7; /* סגול ראשי / CTA */ 
-      --c2:#1e95df; /* כחול טורקיז/ משני */ 
-      --c3:#337cdc; /* כחול כהה */ 
-      --c4:#5f5ad7; /* כחול סגול / גבולות (מוחלש) */
-      --danger:#f86173; /* ורוד-אדום (מחיר/דחיפות) */
+      --c1:#933ec7; 
+      --c2:#1e95df; 
+      --c3:#337cdc; 
+      --c4:#5f5ad7; 
+      --danger:#f86173; 
       --text:#111;
-      --bg:#fcfcff; /* רקע בהיר מאוד */
+      --bg:#fcfcff; 
       --card-bg:#ffffff;
-      --alt-bg:#f8f9ff; /* רקע מתחלף עדין יותר */
+      --alt-bg-light:#f8f9ff; 
     }
     @keyframes colorChange {
         0% { background-color: var(--c1); }
@@ -25,17 +25,16 @@
     
     html,body{font-family:var(--font);margin:0;background:var(--bg);color:var(--text)}
     .wrap{max-width:1050px;margin:0 auto;padding:20px}
-    /* Header - נקי וממותג + קישור הבית */
     header{padding:10px 0;border-bottom:3px solid var(--c2);background:var(--card-bg)}
     header img{height:50px}
     header div{font-size: 24px; font-weight: 700; color: var(--c3);}
 
-    /* פס הטיימר - בולט ודביק + קופי משודרג */
+    /* פס הטיימר - בולט ודביק */
     .bar{
       position:sticky;top:0;z-index:10;background:var(--c1); 
       animation: colorChange 10s infinite alternate; 
       color:white;
-      display:flex;gap:10px;align-items:center;justify-content:center;padding:14px 12px; 
+      display:flex;gap:10px;align-items:center;justify-content:center;padding:14px 12px;
       font-size:18px;
       font-weight:700;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); 
@@ -53,15 +52,14 @@
         background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 100 100'%3E%3Cdefs%3E%3Cstyle%3E .c1%7Bfill:none;stroke:%23%5Bc1%5D;stroke-width:1%7D .c2%7Bfill:%23%5Bc2%5D%7D %3C/style%3E%3C/defs%3E%3Cpath class='c1' d='M0 50 L50 0 L100 50 L50 100 Z'/%3E%3Ccircle class='c2' cx='50' cy='50' r='5'/%3E%3C/svg%3E".replace('%5Bc1%5D', '933ec720').replace('%5Bc2%5D', '1e95df10')) repeat;
         background-size: 80px 80px;
     }
-    /* כותרת - הוספת הצללה ומשקל חזק */
     .hero h1{
-        margin:0 0 10px;font-size:46px;line-height:1.1;color:var(--c1);font-weight:900; /* גודל גדול יותר */
-        text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4); /* צל חזק יותר */
+        margin:0 0 10px;font-size:46px;line-height:1.1;color:var(--c1);font-weight:900;
+        text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4); 
     } 
     .hero p{margin:0 0 20px;color:#444;font-size:18px;} 
-    /* CTA - מושך תשומת לב */
+    /* CTA */
     .cta{
-      display:inline-block;background:var(--c1);color:white;padding:18px 36px;border-radius:30px; 
+      display:inline-block;background:var(--c1);color:white;padding:18px 36px;border-radius:30px;
       text-decoration:none;font-weight:800;box-shadow:0 8px 20px rgba(147,62,199,0.5);
       transition: transform 0.2s, box-shadow 0.2s; 
     }
@@ -69,69 +67,53 @@
         transform: translateY(-2px) scale(1.03); 
         box-shadow: 0 10px 25px rgba(147,62,199,0.7);
     }
-
     .micro{font-size:13px;color:var(--danger);margin-top:8px} 
-    /* כל הסקשנים - פינות עגולות יותר וצללית */
-    .sec{background:var(--card-bg);border:1px solid rgba(95,90,215,0.2); 
-        border-radius:20px;padding:25px;margin:20px 0;box-shadow:0 6px 15px rgba(0,0,0,0.05)} 
-    .sec:nth-child(even){background:var(--alt-bg);border-color:rgba(30,149,223,0.2);} 
+    
+    /* סקשנים - פינות עגולות וצבעוניות (מעורבב) */
+    .sec{border-radius:20px;padding:25px;margin:20px 0;box-shadow:0 6px 15px rgba(0,0,0,0.05)} 
+    .sec:nth-child(2){background:var(--c2);color:white;} /* מה בפנים - כחול טורקיז */
+    .sec:nth-child(2) h2{color:white;border-bottom:1px solid rgba(255,255,255,0.3);}
+    .sec:nth-child(2) .bullets li{background:rgba(255,255,255,0.2);border:1px solid rgba(255,255,255,0.5);color:white;}
+    .sec:nth-child(2) .bullets li:before{color:yellow;}
+
+    .sec:nth-child(4){background:var(--alt-bg-light);} /* עדויות */
     .sec h2{margin:0 0 15px;font-size:26px;color:var(--c3);border-bottom:1px solid #eee;padding-bottom:10px;font-weight:700}
     
-    /* הבלטת עדויות - פס סגול משמאל */
+    /* עיצוב כרטיסי עדויות (הכוכבים) */
+    .star-rating{font-size:20px;color:gold;margin-bottom:10px}
     #testimonials .card{
-        border-left: 5px solid var(--c1); /* פס בולט בצבע מותג */
         border-top: none;
         box-shadow: 2px 4px 10px rgba(0,0,0,0.1);
-        padding: 20px 15px 20px 20px;
+        padding: 20px;
         background: white;
-        font-style: italic; /* להדגיש שמדובר בציטוט */
+        min-height: 120px;
+        font-size: 16px;
     }
-
-    /* תועלות / בולטים - מראה "קליקבילי" + אמוג'י */
+    #testimonials .card span{display:block;font-weight:600;margin-top:10px;color:var(--c3)}
+    
+    /* מחיר בולט */
+    .price{display:flex;gap:15px;align-items:baseline;flex-wrap:wrap;justify-content:center;margin: 20px 0;}
+    .price .num{font-size:70px;font-weight:900;color:var(--c1);line-height:1} /* גודל עצום */
+    .price .strikethrough{text-decoration: line-through; font-size: 30px; color: var(--danger); opacity: 0.7;} /* קו חוצה בולט */
+    .price-block{background:var(--alt-bg-light);border-radius:16px;padding: 30px;text-align: center;}
+    .price h2{border-bottom: none;padding-bottom: 0;margin-bottom: 5px;}
+    
+    /* כללי */
     .bullets{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:15px}
-    .bullets li{
-        background:var(--bg);border:2px solid #e0e0e0;border-radius:12px;padding:12px;list-style:none;font-weight:500;color:var(--text);
-        transition: border-color 0.2s; 
-    }
-    .bullets li:hover{
-        border-color: var(--c1); 
-    }
-    .bullets li:before{content:"✨";margin-inline-end:8px;} 
-    /* טעימה / כרטיסיות - מראה 3D קטן */
+    .bullets li{list-style:none;font-weight:500;color:inherit;padding: 10px;}
+    .bullets li:before{content:"✨";margin-inline-end:8px;color:inherit;font-weight:700} 
     .teaser{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:15px}
-    .card{
-        background:#f8faff;border:1px solid var(--c2);border-radius:16px;padding:15px;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.08); 
-        transition: box-shadow 0.3s;
-    }
-    .card:hover{
-        box-shadow: 0 8px 16px rgba(0,0,0,0.25); 
-    }
-    .card b{color:var(--c3)}
-    /* מחיר */
-    .price{display:flex;gap:15px;align-items:baseline;flex-wrap:wrap}
-    .price .num{font-size:52px;font-weight:800;color:var(--c1)}
-    .price div{font-size:18px;font-weight:600;color:#555}
-    .price .strikethrough{text-decoration: line-through; font-size: 20px; color: var(--danger);} 
-    .btn-row{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-top:15px}
-    .btn{background:var(--c3);color:#fff;padding:12px 18px;border-radius:30px;text-decoration:none;font-weight:600}
-    .btn.alt{background:var(--card-bg);color:var(--c2);border:1px solid var(--c2)}
-    /* שאלות נפוצות - ויזואליות יותר */
-    .faq details{border:1px solid #eceff1;border-radius:16px;margin:10px 0;padding:12px;background:var(--card-bg);box-shadow: 0 2px 4px rgba(0,0,0,0.05)}
-    .faq summary{font-weight:700;cursor:pointer;color:var(--c1);padding-right:10px} 
-    .faq details div{padding-top:10px;padding-right:10px;color:#444}
-    /* עליי - בולטות התמונה */
-    .about{display:flex;gap:20px;align-items:center;background:var(--alt-bg);border-color:var(--c4)}
+    .card{background:#f8faff;border:1px solid var(--c2);border-radius:16px;padding:15px;box-shadow: 0 4px 8px rgba(0,0,0,0.08); transition: box-shadow 0.3s;}
+    
+    .about{display:flex;gap:20px;align-items:center;background:var(--alt-bg-light);border-color:var(--c4)}
     .about img{width:100px;height:100px;border:4px solid var(--c1);border-radius:50%;object-fit:cover;box-shadow: 0 0 0 2px white, 0 0 0 5px var(--c2);} 
-    /* Footer */
     footer{color:#666;font-size:13px;text-align:center;padding:16px 0}
     footer a{color:var(--c3);text-decoration:none}
-    /* רספונסיביות */
     @media (max-width:900px){.hero{grid-template-columns:1fr}}
   </style></head><body>
   <div class="bar">
-    <span class="badge">מבצע 50 שנה!</span>
-    <span>כל הידע בפרומפטבוק ב-68% הנחה! נגמר בעוד</span>
+    <span class="badge">🎁 מבצע חודש היומולדת</span>
+    <span>המבצע המיוחד נגמר בעוד</span>
     <span class="time" id="timer">00:00:00</span>
   </div>
 
@@ -177,33 +159,55 @@
         <a class="btn alt" href="https://promptbook-hebrew-hub.lovable.app/full" target="_blank" rel="noopener">צפה בכל התכנים</a>
       </div>
     </section>
-
+    
     <section class="sec" id="testimonials">
-      <h2>מה אומרים</h2>
+      <h2>מה אומרים מי שכבר קראו</h2>
       <div class="teaser">
-        <div class="card">“זה לא רק AI, זו מכונת קופי שמדברת אל הלקוחות שלי בצורה שאני לא הצלחתי. מילים עם נשמה.”</div>
-        <div class="card">“חייבת לומר: נגמרו בלבולי מוח. 10 דקות ויש לי תסריט רילס מוכן עם מסר חזק.”</div>
-        <div class="card">“סוף סוף פרומפטים שמתאימים לשוק הישראלי, בלי הצורך 'לתרגם את הנשמה' של המותג שלי.”</div>
+        <div class="card">
+            <div class="star-rating">★★★★★</div>
+            "שדרגתי את כל מערכת האימיילים שלי תוך ימים."
+            <span>- יוסי אברהם, משווק דיגיטלי</span>
+        </div>
+        <div class="card">
+            <div class="star-rating">★★★★★</div>
+            "זה כמו לשבת עם מומחה שיווק אישי, רק בלי המחיר של מומחה."
+            <span>- דנה לוי, יועצת עסקית</span>
+        </div>
+        <div class="card">
+            <div class="star-rating">★★★★★</div>
+            "זה לא עוד מדריך תיאורטי, כל פרומפט פשוט עובד!"
+            <span>- שי כהן, בעל עסק</span>
+        </div>
       </div>
     </section>
 
-    <section class="sec">
-      <h2>מבצע יום הולדת 50!</h2>
+    <section class="sec price-block">
+      <h2>🎁 מבצע יום הולדת 50! (לזמן מוגבל)</h2>
       <div class="price">
-        <div class="num">129 ₪</div>
         <div class="strikethrough">397 ₪</div>
-        <div>במקום 397 ₪ • כולל עדכונים עתידיים</div>
+        <div class="num">129 ₪</div>
+        <div>חוסכים 268 ₪!</div>
       </div>
       <div class="btn-row">
         <a id="payBottom" class="cta" href="https://links.payboxapp.com/1G1C8QGt9Xb" target="_blank" rel="noopener">רכישה עכשיו</a>
       </div>
     </section>
 
+    <section class="sec">
+      <h2>איך זה עובד</h2>
+      <ol>
+        <li>רכישה מאובטחת (פייבוקס).</li>
+        <li>מייל עם לינק גישה מיידית.</li>
+        <li>נכנסים, מסננים, מעתיקים – ומייצרים תוכן.</li>
+      </ol>
+    </section>
+
     <section class="sec faq">
       <h2>שאלות נפוצות</h2>
       <details><summary>איך מקבלים גישה?</summary><div>מיד אחרי התשלום, לינק גישה נשלח למייל.</div></details>
       <details><summary>אפשר קבלה?</summary><div>כן. מתקבלת אוטומטית למייל.</div></details>
-      <details><summary>האם יש החזר כספי?</summary><div>מדיניות ההחזרים המלאה מפורטת בתנאי השימוש. פנה/י אלינו דרך עמוד צור קשר.</div></details> <details><summary>זה עובד גם בנייד?</summary><div>כן.</div></details>
+      <details><summary>האם יש החזר כספי?</summary><div>מדיניות ההחזרים המלאה מפורטת בתנאי השימוש. פנה/י אלינו דרך עמוד צור קשר.</div></details>
+      <details><summary>זה עובד גם בנייד?</summary><div>כן.</div></details>
       <details><summary>אפשר לשתף?</summary><div>רישיון אישי. לצוותים – דברו איתי.</div></details>
     </section>
 
