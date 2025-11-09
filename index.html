@@ -11,7 +11,7 @@
       --c2:#1e95df; /* כחול טורקיז/ משני */ 
       --c3:#337cdc; /* כחול כהה */ 
       --c4:#5f5ad7; /* כחול סגול / גבולות */
-      --danger:#f86173; /* ורוד-אדום (לפס המכירה הבולט) */
+      --danger:#f86173; /* ורוד-אדום */
       --text:#111;
       --bg:#fcfcff; /* רקע בהיר מאוד */
       --card-bg:#ffffff;
@@ -19,9 +19,14 @@
       --shadow-color: rgba(147, 62, 199, 0.5); /* צל ממותג */
     }
     @keyframes colorChange {
-        0% { background-color: var(--c1); }
+        0% { background-color: var(--c1); } /* אנימציה להדר הראשי */
         50% { background-color: var(--c2); }
         100% { background-color: var(--c1); }
+    }
+    @keyframes pulseDanger {
+        0% { background-color: var(--danger); box-shadow: 0 0 10px rgba(248, 97, 115, 0.9); }
+        50% { background-color: rgba(248, 97, 115, 0.8); box-shadow: none; } /* צבע שקוף יותר */
+        100% { background-color: var(--danger); box-shadow: 0 0 10px rgba(248, 97, 115, 0.9); }
     }
     
     html,body{font-family:var(--font);margin:0;background:var(--bg);color:var(--text)}
@@ -49,18 +54,23 @@
     }
     
     /* פס המכירה הדרמטי החדש (מוצמד לכותרת) */
-    .hero .promo-bar-static{
+    .promo-bar-static{
         background-color: var(--danger);
         color: white;
-        font-size: 16px;
+        text-align: center;
+        font-size: 18px; /* קטן יותר מהבר הראשי */
         font-weight: 800;
-        padding: 10px 15px;
-        border-radius: 30px; 
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        margin: 0 auto 30px; /* מרווח מלמעלה ומלמטה */
+        padding: 12px 20px;
+        border-radius: 30px; /* עגול מאוד */
+        margin: 20px auto 30px;
         width: fit-content;
-        letter-spacing: 0.5px;
+        line-height: 1.4;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+        /* יישום האנימציה החדשה */
+        animation: pulseDanger 1.5s infinite alternate; 
     }
+    .promo-bar-static span{font-size: 20px; font-weight: 900;}
+    .promo-bar-static img { height: 20px; vertical-align: middle; margin-inline-start: 8px;}
 
 
     /* HERO - ממורכז, נקי ובולט */
@@ -147,7 +157,7 @@
     .bullets{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:15px}
     .bullets li{list-style:none;font-weight:700;color:var(--text);padding: 10px; background: #fff; border:2px solid #e0e0e0; border-radius:12px;}
     .bullets li:before{content:"✨";margin-inline-end:8px;} 
-    .teaser{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:15px}
+    .teaser{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:15px}
     .about img{width:100px;height:100px;border:4px solid var(--c1);border-radius:50%;object-fit:cover;box-shadow: 0 0 0 2px white, 0 0 0 5px var(--c2);} 
     footer{color:#666;font-size:13px;text-align:center;padding:16px 0}
     footer a{color:var(--c3);text-decoration:none}
