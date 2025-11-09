@@ -11,13 +11,12 @@
       --c2:#1e95df; /* כחול טורקיז/ משני */ 
       --c3:#337cdc; /* כחול כהה */ 
       --c4:#5f5ad7; /* כחול סגול / גבולות */
-      --danger:#f86173; /* ורוד-אדום / טיימר (משמש רק כצבע אזהרה/טקסט עכשיו) */
+      --danger:#f86173; /* ורוד-אדום */
       --text:#111;
       --bg:#fcfcff; /* רקע בהיר מאוד */
       --card-bg:#ffffff;
       --alt-bg:#f5faff; /* רקע מתחלף עדין */
     }
-    /* אנימציית מעבר צבעים לטיימר */
     @keyframes colorChange {
         0% { background-color: var(--c1); }
         50% { background-color: var(--c2); }
@@ -29,44 +28,65 @@
     /* Header - נקי וממותג */
     header{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:3px solid var(--c2);background:var(--card-bg)}
     header img{height:50px}
-    /* תיקון: כותרת ליד הלוגו */
     header div{font-size: 24px; font-weight: 700; color: var(--c3);}
 
     /* פס הטיימר - בולט ודביק + אנימציה */
     .bar{
-      position:sticky;top:0;z-index:10;background:var(--c1); /* צבע בסיס */
-      animation: colorChange 10s infinite alternate; /* אנימציה איטית */
+      position:sticky;top:0;z-index:10;background:var(--c1); 
+      animation: colorChange 10s infinite alternate; 
       color:white;
       display:flex;gap:10px;align-items:center;justify-content:center;padding:12px 12px;
       font-size:16px;
       font-weight:700;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* הצללה קטנה לבולטות */
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
     }
     .bar .time{font-weight:900;color:yellow}
     .bar .badge{
       background:rgba(255,255,255,0.2);
       border:1px solid rgba(255,255,255,0.5);
-      border-radius:30px; /* יותר עגול */
-      padding:6px 15px; /* יותר בולט */
+      border-radius:30px; 
+      padding:6px 15px; 
     }
     /* HERO - פתיח */
     .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:30px;align-items:center;padding:24px 0}
-    .hero h1{margin:0 0 10px;font-size:40px;line-height:1.2;color:var(--c1);font-weight:800} /* כותרת יותר בולטת */
+    .hero h1{margin:0 0 10px;font-size:40px;line-height:1.2;color:var(--c1);font-weight:800} 
     .hero p{margin:0 0 20px;color:#444}
-    /* CTA */
-    .cta{display:inline-block;background:var(--c1);color:white;padding:16px 30px;border-radius:30px;text-decoration:none;font-weight:700;box-shadow:0 6px 15px rgba(147,62,199,0.4);} /* צל ובולטות חזקה */
+    /* CTA - מושך תשומת לב */
+    .cta{
+      display:inline-block;background:var(--c1);color:white;padding:16px 30px;border-radius:30px;
+      text-decoration:none;font-weight:700;box-shadow:0 6px 15px rgba(147,62,199,0.4);
+      transition: transform 0.2s, box-shadow 0.2s; /* אפקט מעבר (Hover) */
+    }
+    .cta:hover{
+        transform: translateY(-2px) scale(1.02); /* קופץ מעט */
+        box-shadow: 0 8px 20px rgba(147,62,199,0.5);
+    }
+
     .micro{font-size:13px;color:#666;margin-top:8px}
-    /* כל הסקשנים - לבן עם גבול עדין + רקע מתחלף */
-    .sec{background:var(--card-bg);border:1px solid var(--c4);border-radius:16px;padding:25px;margin:20px 0;box-shadow:0 3px 8px rgba(0,0,0,0.05)}
+    /* כל הסקשנים - פינות עגולות יותר וצללית */
+    .sec{background:var(--card-bg);border:1px solid var(--c4);border-radius:20px;padding:25px;margin:20px 0;box-shadow:0 6px 15px rgba(0,0,0,0.05)} /* צללית חזקה יותר */
     .sec:nth-child(even){background:var(--alt-bg);border-color:var(--c2);} /* רקע מתחלף */
     .sec h2{margin:0 0 15px;font-size:26px;color:var(--c3);border-bottom:1px solid #eee;padding-bottom:10px;font-weight:700}
-    /* תועלות / בולטים */
+    /* תועלות / בולטים - מראה "קליקבילי" */
     .bullets{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:15px}
-    .bullets li{background:var(--bg);border:1px solid #e0e0e0;border-radius:10px;padding:12px;list-style:none;font-weight:500;color:var(--text)}
-    .bullets li:before{content:"✓";margin-inline-end:8px;color:var(--c1);font-weight:700} /* וי קטן */
-    /* טעימה / כרטיסיות */
+    .bullets li{
+        background:var(--bg);border:2px solid #e0e0e0;border-radius:12px;padding:12px;list-style:none;font-weight:500;color:var(--text);
+        transition: border-color 0.2s; /* אפקט מעבר */
+    }
+    .bullets li:hover{
+        border-color: var(--c1); /* מסגרת סגולה במעבר עכבר */
+    }
+    .bullets li:before{content:"✓";margin-inline-end:8px;color:var(--c1);font-weight:700} 
+    /* טעימה / כרטיסיות - מראה 3D קטן */
     .teaser{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:15px}
-    .card{background:#f8faff;border:1px solid var(--c2);border-radius:12px;padding:15px}
+    .card{
+        background:#f8faff;border:1px solid var(--c2);border-radius:16px;padding:15px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.08); /* צל קטן */
+        transition: box-shadow 0.3s;
+    }
+    .card:hover{
+        box-shadow: 0 6px 12px rgba(0,0,0,0.15); /* הצללה מתחזקת במעבר עכבר */
+    }
     .card b{color:var(--c3)}
     /* מחיר */
     .price{display:flex;gap:15px;align-items:baseline;flex-wrap:wrap}
@@ -75,13 +95,13 @@
     .btn-row{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-top:15px}
     .btn{background:var(--c3);color:#fff;padding:12px 18px;border-radius:30px;text-decoration:none;font-weight:600}
     .btn.alt{background:var(--card-bg);color:var(--c2);border:1px solid var(--c2)}
-    /* שאלות נפוצות */
-    .faq details{border:1px solid #eceff1;border-radius:12px;margin:10px 0;padding:12px;background:var(--card-bg)}
-    .faq summary{font-weight:600;cursor:pointer;color:var(--c3)}
-    .faq details div{padding-top:10px;color:#444}
-    /* עליי */
+    /* שאלות נפוצות - ויזואליות יותר */
+    .faq details{border:1px solid #eceff1;border-radius:16px;margin:10px 0;padding:12px;background:var(--card-bg);box-shadow: 0 2px 4px rgba(0,0,0,0.05)}
+    .faq summary{font-weight:700;cursor:pointer;color:var(--c1);padding-right:10px} /* טקסט כותרת סגול ובולט */
+    .faq details div{padding-top:10px;padding-right:10px;color:#444}
+    /* עליי - בולטות התמונה */
     .about{display:flex;gap:20px;align-items:center;background:var(--alt-bg);border-color:var(--c4)}
-    .about img{width:100px;height:100px;border:3px solid var(--c1);border-radius:50%;object-fit:cover}
+    .about img{width:100px;height:100px;border:4px solid var(--c1);border-radius:50%;object-fit:cover;box-shadow: 0 0 0 2px white, 0 0 0 5px var(--c2);} /* מסגרת כפולה בולטת */
     /* Footer */
     footer{color:#666;font-size:13px;text-align:center;padding:16px 0}
     footer a{color:var(--c3);text-decoration:none}
