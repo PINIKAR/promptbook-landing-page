@@ -88,10 +88,21 @@
       display:inline-block;background:var(--c1);color:white;padding:18px 36px;border-radius:30px;
       text-decoration:none;font-weight:800;box-shadow:0 8px 20px rgba(147,62,199,0.5);
       transition: transform 0.2s, box-shadow 0.2s; 
+      font-size: 18px;
     }
     .cta:hover{
         transform: translateY(-2px) scale(1.03); 
         box-shadow: 0 10px 25px rgba(147,62,199,0.7);
+    }
+    
+    /* כפתור מושבת */
+    .cta.disabled {
+      background: #999;
+      cursor: not-allowed;
+      box-shadow: none;
+    }
+    .cta.disabled:hover {
+      transform: none;
     }
 
     .micro{display: none;} 
@@ -132,9 +143,8 @@
     .card:nth-child(6n+5) { background-color: #F8F9FF; border-color: rgba(95, 90, 215, 0.5); }
     .card:nth-child(6n+6) { background-color: #FFF9E0; border-color: rgba(255, 204, 0, 0.5); }
 
-
     /* כפתורי הטעימה */
-    .btn-row{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-top:20px;} 
+    .btn-row{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-top:20px;justify-content:center;} 
     .btn, .btn.alt{ 
         display: inline-block; 
         padding:12px 18px;
@@ -164,6 +174,16 @@
     .price-block .price .savings{font-size: 26px; font-weight: 700; color: var(--danger); margin-top: 15px;display: block;}
     .price-block .value-line {font-size: 16px;font-weight: 500;color: var(--c3);margin-top: 30px;}
     
+    /* הודעת תשלום בטוח */
+    .secure-payment {
+      margin-top: 20px;
+      font-size: 14px;
+      color: #666;
+    }
+    .secure-payment strong {
+      color: var(--c1);
+    }
+    
     /* FAQ - תיקון פונקציונליות סופי */
     .faq summary{font-weight:700;cursor:pointer;color:var(--c1);padding-right:10px; outline: none; list-style: none;} 
     .faq summary::-webkit-details-marker {display: none;} 
@@ -175,12 +195,17 @@
     .bullets{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:15px}
     .bullets li{list-style:none;font-weight:700;color:var(--text);padding: 10px; background: #fff; border:2px solid #e0e0e0; border-radius:12px;}
     .bullets li:before{content:"✨";margin-inline-end:8px;} 
-    .teaser{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:15px}
     .about img{width:100px;height:100px;border:4px solid var(--c1);border-radius:50%;object-fit:cover;box-shadow: 0 0 0 2px white, 0 0 0 5px var(--c2);} 
     footer{color:#666;font-size:13px;text-align:center;padding:16px 0}
     footer a{color:var(--c3);text-decoration:none}
-    @media (max-width:900px){.hero{grid-template-columns:1fr}}
-  </style></head><body>
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr}
+      .hero h1{font-size:32px;}
+      .bar{font-size:14px;padding:10px;}
+    }
+  </style>
+</head>
+<body>
   <div class="bar">
     <span class="badge">🎁 חודש היומולדת שלי!</span>
     <span>כל הידע בפרומפטבוק ב-68% הנחה! נגמר בעוד</span>
@@ -204,7 +229,8 @@
       <div>
         <h1>הקץ לטקסטים רובוטיים: 101 הפרומפטים שמוסיפים נשמה ל-AI שלך (ובאמת מוכרים בעברית)</h1>
         <p><strong>אם ה-AI כותב לכם טקסטים קרים שפשוט לא ממירים, אתם לא לבד.</strong></p>
-        <a id="payTop" class="cta" href="https://links.payboxapp.com/1G1C8QGt9Xb" target="_blank" rel="noopener">קבלו גישה מיידית לכלי</a>
+        <a id="payTop" class="cta" href="https://app.upay.co.il/API6/s.php?m=cjRMRld6dWFOMEhpZVErM3NyeVlmdz09" target="_blank" rel="noopener">🚀 קבלו גישה מיידית - רק 129 ₪</a>
+        <p class="secure-payment">💳 תשלום מאובטח דרך <strong>Yaad Sarig</strong> | גישה מיידית | ללא מנוי חודשי</p>
       </div>
     </section>
 
@@ -222,53 +248,24 @@
     <section class="sec">
       <h2>טעימה מהכלי</h2>
       <div class="teaser">
-        <div class="card card-color-1"><b>כותרת ממירה לדף נחיתה</b><br>יצירת 10 וריאציות עם הבטחת תוצאה וטון רגשי.</div>
-        <div class="card card-color-2"><b>פתיח אמפתי קצר</b><br>נוסחה של 70 מילים לזיהוי כאב, תקווה ופתרון לקהל שלך.</div>
-        <div class="card card-color-3"><b>קמפיין 7 ימים להשקה רכה</b><br>בניית רצף 7 ימי טיזר, עדות ודחיפות להשקות מוצרים.</div>
-        <div class="card card-color-4"><b>Retargeting השארת עגלה</b><br>3 מודעות רימרקטינג אפקטיביות למבקרים שלא המירו (רגשי, חברתי, רציונלי).</div>
-        <div class="card card-color-5"><b>פירוק התנגדות עיקרית</b><br>מענה בשלושה חלקים להתנגדות הגדולה ביותר למוצר שלך (אמפתיה→הוכחה).</div>
-        <div class="card card-color-6"><b>FAQ ממיר</b><br>6 שאלות ותשובות שמסירות התנגדויות ומכניסות CTA עדין.</div>
+        <div class="card"><b>כותרת ממירה לדף נחיתה</b><br>יצירת 10 וריאציות עם הבטחת תוצאה וטון רגשי.</div>
+        <div class="card"><b>פתיח אמפתי קצר</b><br>נוסחה של 70 מילים לזיהוי כאב, תקווה ופתרון לקהל שלך.</div>
+        <div class="card"><b>קמפיין 7 ימים להשקה רכה</b><br>בניית רצף 7 ימי טיזר, עדות ודחיפות להשקות מוצרים.</div>
+        <div class="card"><b>Retargeting השארת עגלה</b><br>3 מודעות רימרקטינג אפקטיביות למבקרים שלא המירו (רגשי, חברתי, רציונלי).</div>
+        <div class="card"><b>פירוק התנגדות עיקרית</b><br>מענה בשלושה חלקים להתנגדות הגדולה ביותר למוצר שלך (אמפתיה→הוכחה).</div>
+        <div class="card"><b>FAQ ממיר</b><br>6 שאלות ותשובות שמסירות התנגדויות ומכניסות CTA עדין.</div>
       </div>
       <div class="btn-row">
-       <a 
-  href="https://app.upay.co.il/API6/s.php?m=cjRMRld6dWFOMEhpZVErM3NyeVlmdz09" 
-  target="_blank" 
-  class="cta-button"
-  style="
-    display: inline-block;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    padding: 18px 50px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-size: 20px;
-    font-weight: bold;
-    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
-    transition: transform 0.3s ease;
-  "
->
-  🚀 רכישת גישה מלאה - ₪129
-</a>
-
-<p style="margin-top: 15px; font-size: 14px; color: #888; text-align: center;">
-  💳 תשלום מאובטח ומיידי דרך Yaad Sarig
-</p>
-
-<p style="margin-top: 8px; font-size: 13px; color: #999; text-align: center;">
-  ✅ גישה מיידית | ✅ תשלום חד-פעמי | ✅ ללא מנוי חודשי
-</p>
-
-   החלפת כפתור תשלום מפייבוקס ליופיי
-        <a class="btn alt" href="https://promptbook-hebrew-hub.lovable.app/full" target="_blank" rel="noopener">צפו בכל התכנים</a>
+        <a class="btn alt" href="https://promptbook-hebrew-hub.lovable.app/full" target="_blank" rel="noopener">👀 צפו בכל 101 הפרומפטים</a>
       </div>
     </section>
 
     <section class="sec">
       <h2>איך זה עובד</h2>
-      <ol>
-        <li>רכישה מאובטחת (פייבוקס).</li>
-        <li>מייל עם לינק גישה מיידית.</li>
-        <li>נכנסים, מסננים, מעתיקים – ומייצרים תוכן.</li>
+      <ol style="font-size: 18px; line-height: 1.8;">
+        <li>רכישה מאובטחת דרך Yaad Sarig (תשלום חד-פעמי)</li>
+        <li>מייל אוטומטי עם קישור גישה מיידית לאפליקציה</li>
+        <li>נכנסים, מסננים, מעתיקים – ומתחילים לייצר תוכן שמוכר</li>
       </ol>
     </section>
     
@@ -278,41 +275,33 @@
         <div class="card">
             <div class="star-rating">★★★★★</div>
             "הכלי הזה חסך לי לפחות 5 שעות כתיבה שבועיות. במקום לשבור את הראש, אני פשוט מעתיקה ומדביקה."
-            <span>- יעל כץ, מנהלת סושיאל</span>
+            <br><strong>- יעל כץ, מנהלת סושיאל</strong>
         </div>
         <div class="card">
             <div class="star-rating">★★★★★</div>
             "פנינה, תודה! זה מרגיש כמו ששכרתי קופירייטר צמוד לעסק, אבל שילמתי פחות משיחת ייעוץ אחת."
-            <span>- רן לוי, מאמן אישי</span>
+            <br><strong>- רן לוי, מאמן אישי</strong>
         </div>
         <div class="card">
             <div class="star-rating">★★★★★</div>
             "התוצאות הן עברית נקייה וטבעית. סוף סוף ה-AI מדבר בשפה שמתאימה לקהל הישראלי."
-            <span>- מירב דהן, פרילנסרית</span>
+            <br><strong>- מירב דהן, פרילנסרית</strong>
         </div>
       </div>
     </section>
 
     <section class="sec price-block">
       
-      <h2>
-        למה עכשיו? 💰
-      </h2>
+      <h2>למה עכשיו? 💰</h2>
       
-      <p>
+      <p style="font-size: 18px;">
         לכבוד חודש היומולדת שלי (אני חוגגת 50!), אתם מקבלים גישה מיידית לכלי האינטראקטיבי במחיר מיוחד:
       </p>
 
       <div class="price"> 
-        <div class="strikethrough-price">
-          397 ₪
-        </div>
-        <div class="num">
-          129 ₪
-        </div>
-        <div class="savings">
-          חוסכים 268 ₪!
-        </div>
+        <div class="strikethrough-price">397 ₪</div>
+        <div class="num">129 ₪</div>
+        <div class="savings">חוסכים 268 ₪!</div>
       </div>
       
       <p class="value-line">
@@ -320,32 +309,39 @@
       </p>
       
       <div class="btn-row" style="justify-content: center; margin-top: 40px;">
-        <a id="payBottom" class="cta" href="https://links.payboxapp.com/1G1C8QGt9Xb" target="_blank" rel="noopener" style="padding: 20px 40px;">
-          כן, אני רוצה את הכלי עכשיו!
+        <a id="payBottom" class="cta" href="https://app.upay.co.il/API6/s.php?m=cjRMRld6dWFOMEhpZVErM3NyeVlmdz09" target="_blank" rel="noopener" style="padding: 20px 40px; font-size: 20px;">
+          כן, אני רוצה את הכלי עכשיו! 🎯
         </a>
       </div>
+      
+      <p class="secure-payment" style="margin-top: 20px;">
+        💳 <strong>תשלום מאובטח</strong> דרך Yaad Sarig | ✅ גישה מיידית | 🔒 ללא מנוי חודשי
+      </p>
       
     </section>
 
     <section class="sec faq">
       <h2>שאלות נפוצות</h2>
-      <details><summary>איך מקבלים גישה?</summary><div>מיד אחרי התשלום, לינק גישה נשלח למייל.</div></details>
-      <details><summary>אפשר קבלה?</summary><div>כן. מתקבלת אוטומטית למייל.</div></details>
-      <details><summary>זה עובד גם בנייד?</summary><div>כן.</div></details>
-      <details><summary>אפשר לשתף?</summary><div>רישיון אישי. לצוותים – דברו איתי.</div></details>
+      <details><summary>איך מקבלים גישה?</summary><div>מיד אחרי התשלום, קישור גישה ישלח אוטומטית למייל שהזנת. הגישה היא מיידית ואפשר להתחיל להשתמש מיד.</div></details>
+      <details><summary>אפשר לקבל קבלה?</summary><div>כן, קבלה מס מתקבלת אוטומטית למייל אחרי התשלום.</div></details>
+      <details><summary>זה עובד גם בנייד?</summary><div>כן! האפליקציה מותאמת לכל המכשירים - מחשב, טאבלט וסמארטפון.</div></details>
+      <details><summary>אפשר לשתף עם עוד אנשים?</summary><div>זהו רישיון אישי. לצוותים או עסקים - צרו איתי קשר לתמחור מיוחד.</div></details>
+      <details><summary>מה אם זה לא מתאים לי?</summary><div>אם תגלו שהכלי לא מתאים לכם תוך 14 יום, צרו קשר ונחזיר את הכסף. ללא שאלות.</div></details>
     </section>
 
     <section class="sec about">
-      <img src="pnina-profile.jpg" alt="Pnina">
+      <img src="pnina-profile.jpg" alt="Pnina Karayoff">
       <div>
-        <h2>עליי</h2>
-        <p>שלום, אני פנינה. כמוך, הייתי מתוסכלת מהפער בין כוחו של ה-AI לצורך האמיתי שלנו: <strong>לכתוב תוכן שהוא גם חכם וגם מרגש.</strong> את PromptBook בניתי כדי לגשר על הפער הזה – זו שיטה שמשלבת אסטרטגיה, עיצוב (UI/UX), וטכנולוגיה, שהופכת אותך לקופירייטר/ית עם רגש. המטרה שלי? שתכתוב/י פחות, ותמכור/י יותר.</p>
+        <h2>עליי - פנינה קריוף</h2>
+        <p style="font-size: 16px; line-height: 1.7;">
+          שלום, אני פנינה. כמוך, הייתי מתוסכלת מהפער בין כוחו של ה-AI לצורך האמיתי שלנו: <strong>לכתוב תוכן שהוא גם חכם וגם מרגש.</strong> את PromptBook בניתי כדי לגשר על הפער הזה – זו שיטה שמשלבת אסטרטגיה, עיצוב (UI/UX), וטכנולוגיה, שהופכת אותך לקופירייטר/ית עם רגש. המטרה שלי? שתכתוב/י פחות, ותמכור/י יותר.
+        </p>
       </div>
     </section>
   </main>
 
   <footer>
-    © PromptBook • 
+    © 2025 PromptBook by Pnina Karayoff • 
     <a href="mailto:pninakar@gmail.com">צור קשר</a> • 
     <a href="https://wa.me/972548383451" target="_blank" rel="noopener">ווטסאפ</a> •
     <a href="terms.html">תנאי שימוש</a> • 
@@ -355,9 +351,7 @@
 
   <script>
     // === הגדרת דד-ליין לטיימר ===
-    // התאריך המבוקש: 30 בנובמבר 2025, 23:59:59
     const deadline = new Date(2025, 10, 30, 23, 59, 59).getTime();
-
     const $timer = document.getElementById('timer');
     const buttons = [document.getElementById('payTop'), document.getElementById('payBottom')];
 
@@ -373,7 +367,6 @@
       $timer.textContent = out;
 
       if(diff===0){
-        // סיום ההצעה: משנים רקע ל-כחול כהה ומנטרלים כפתורים
         document.querySelector('.bar').style.background = 'var(--c3)'; 
         $timer.style.color = 'white';
         document.querySelector('.bar span:nth-child(2)').textContent = 'ההצעה הסתיימה';
@@ -381,11 +374,13 @@
           b.classList.add('disabled');
           b.textContent = 'המחיר הרגיל נכנס לתוקף';
           b.href = '#';
+          b.onclick = (e) => { e.preventDefault(); return false; };
         });
         clearInterval(iv);
       }
     }
-    // הפעלה מיידית של הפונקציה כדי להציג את הזמן מיד
     tick();
     const iv = setInterval(tick, 1000); 
-  </script></body></html>
+  </script>
+</body>
+</html>
